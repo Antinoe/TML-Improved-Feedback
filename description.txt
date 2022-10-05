@@ -1,0 +1,7 @@
+Sounds:
+-Stepping
+-Landing
+
+Screenshake:
+-Falling
+-Landing
