@@ -1,3 +1,4 @@
+using System; //This is so Math functions can work.
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria;
@@ -64,7 +65,7 @@ namespace MovementEffects
 					stepping = false;
 				}
 				//Jumping
-				if (Player.velocity.Y < 0)
+				if (Player.velocity.Y < 0 && Player.controlJump)
 				{
 					if (!jumping)
 					{
@@ -99,7 +100,7 @@ namespace MovementEffects
 						}
 						if (MovementEffectsConfigClient.Instance.enableScreenshake)
 						{
-							screenShakeTimerVeryWeak = 5;
+							screenShakeTimerVeryWeak = 10;
 						}
 					}
 				}
@@ -114,23 +115,23 @@ namespace MovementEffects
 		{
             if (screenShakeTimerVeryWeak > 0)
             {
-				Main.screenPosition.X += (float)Main.rand.Next((int)(0f - 1), (int)1) * 0.10f;
-				Main.screenPosition.Y += (float)Main.rand.Next((int)(0f - 1), (int)1) * 0.10f;
+				Main.screenPosition.X += (float)Math.Round(Main.rand.Next((int)(0f - 1), (int)1) * 1.10f);
+				Main.screenPosition.Y += (float)Math.Round(Main.rand.Next((int)(0f - 1), (int)1) * 1.10f);
             }
             if (screenShakeTimerWeak > 0)
             {
-				Main.screenPosition.X += (float)Main.rand.Next((int)(0f - 1), (int)1) * 0.30f;
-				Main.screenPosition.Y += (float)Main.rand.Next((int)(0f - 1), (int)1) * 0.30f;
+				Main.screenPosition.X += (float)Math.Round(Main.rand.Next((int)(0f - 1), (int)1) * 1.30f);
+				Main.screenPosition.Y += (float)Math.Round(Main.rand.Next((int)(0f - 1), (int)1) * 1.30f);
             }
             if (screenShakeTimerModerate > 0)
             {
-				Main.screenPosition.X += (float)Main.rand.Next((int)(0f - 1), (int)1) * 0.50f;
-				Main.screenPosition.Y += (float)Main.rand.Next((int)(0f - 1), (int)1) * 0.50f;
+				Main.screenPosition.X += (float)Math.Round(Main.rand.Next((int)(0f - 1), (int)1) * 1.50f);
+				Main.screenPosition.Y += (float)Math.Round(Main.rand.Next((int)(0f - 1), (int)1) * 1.50f);
             }
             if (screenShakeTimerStrong > 0)
             {
-				Main.screenPosition.X += (float)Main.rand.Next((int)(0f - 1), (int)1) * 0.70f;
-				Main.screenPosition.Y += (float)Main.rand.Next((int)(0f - 1), (int)1) * 0.70f;
+				Main.screenPosition.X += (float)Math.Round(Main.rand.Next((int)(0f - 1), (int)1) * 1.70f);
+				Main.screenPosition.Y += (float)Math.Round(Main.rand.Next((int)(0f - 1), (int)1) * 1.70f);
             }
 		}
     }
