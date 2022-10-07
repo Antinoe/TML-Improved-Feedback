@@ -1,0 +1,10 @@
+A simple mod about adding more visual and audible detail to Player Movement. 
+
+Sounds:
+-Stepping
+-Jumping
+-Landing
+
+Screenshake:
+-Falling
+-Landing
