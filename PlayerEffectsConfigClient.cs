@@ -45,10 +45,18 @@ namespace PlayerEffects
 			{
 				new ItemDefinition(ItemID.HermesBoots),
 				new ItemDefinition(ItemID.WoodGreaves),
+				new ItemDefinition(ItemID.EbonwoodGreaves),
+				new ItemDefinition(ItemID.PearlwoodGreaves),
+				new ItemDefinition(ItemID.ShadewoodGreaves),
+				new ItemDefinition(ItemID.BorealWoodGreaves),
+				new ItemDefinition(ItemID.PalmWoodGreaves),
+				new ItemDefinition(ItemID.RichMahoganyGreaves),
 				new ItemDefinition(ItemID.CopperGreaves),
 				new ItemDefinition(ItemID.TinGreaves),
 				new ItemDefinition(ItemID.IronGreaves),
 				new ItemDefinition(ItemID.LeadGreaves),
+				new ItemDefinition(ItemID.SilverGreaves),
+				new ItemDefinition(ItemID.TungstenGreaves),
 				new ItemDefinition(ItemID.GoldGreaves),
 				new ItemDefinition(ItemID.PlatinumGreaves)
 			};
@@ -68,31 +76,71 @@ namespace PlayerEffects
 		public List<ItemDefinition> itemRustleClothLightWhitelist = new List<ItemDefinition>
 			{
 				new ItemDefinition(ItemID.WoodBreastplate),
-				new ItemDefinition(ItemID.WoodGreaves)
+				new ItemDefinition(ItemID.WoodGreaves),
+				new ItemDefinition(ItemID.EbonwoodBreastplate),
+				new ItemDefinition(ItemID.EbonwoodGreaves),
+				new ItemDefinition(ItemID.PearlwoodBreastplate),
+				new ItemDefinition(ItemID.PearlwoodGreaves),
+				new ItemDefinition(ItemID.ShadewoodBreastplate),
+				new ItemDefinition(ItemID.ShadewoodGreaves),
+				new ItemDefinition(ItemID.BorealWoodBreastplate),
+				new ItemDefinition(ItemID.BorealWoodGreaves),
+				new ItemDefinition(ItemID.PalmWoodBreastplate),
+				new ItemDefinition(ItemID.PalmWoodGreaves),
+				new ItemDefinition(ItemID.RichMahoganyBreastplate),
+				new ItemDefinition(ItemID.RichMahoganyGreaves)
 			};
 		
 		[Label("[i:Silk] Medium Cloth Rustle Whitelist")]
 		public List<ItemDefinition> itemRustleClothMediumWhitelist = new List<ItemDefinition>
 			{
 				new ItemDefinition(ItemID.CopperChainmail),
-				new ItemDefinition(ItemID.CopperGreaves)
+				new ItemDefinition(ItemID.CopperGreaves),
+				new ItemDefinition(ItemID.TinChainmail),
+				new ItemDefinition(ItemID.TinGreaves),
+				new ItemDefinition(ItemID.IronChainmail),
+				new ItemDefinition(ItemID.IronGreaves),
+				new ItemDefinition(ItemID.LeadChainmail),
+				new ItemDefinition(ItemID.LeadGreaves)
 			};
 		
 		[Label("[i:Leather] Heavy Cloth Rustle Whitelist")]
 		public List<ItemDefinition> itemRustleClothHeavyWhitelist = new List<ItemDefinition>
 			{
-				new ItemDefinition(ItemID.IronChainmail),
-				new ItemDefinition(ItemID.IronGreaves)
+				new ItemDefinition(ItemID.SilverChainmail),
+				new ItemDefinition(ItemID.SilverGreaves),
+				new ItemDefinition(ItemID.TungstenChainmail),
+				new ItemDefinition(ItemID.TungstenGreaves),
+				new ItemDefinition(ItemID.GoldChainmail),
+				new ItemDefinition(ItemID.GoldGreaves),
+				new ItemDefinition(ItemID.PlatinumChainmail),
+				new ItemDefinition(ItemID.PlatinumGreaves)
 			};
 		
-		[Label("[i:SWATHelmet] Light Rattle Rustle Whitelist")]
+		[Label("[i:Chain] Light Rattle Rustle Whitelist")]
 		public List<ItemDefinition> itemRustleRattleLightWhitelist = new List<ItemDefinition>
 			{
+				new ItemDefinition(ItemID.CopperChainmail),
+				new ItemDefinition(ItemID.CopperGreaves),
+				new ItemDefinition(ItemID.TinChainmail),
+				new ItemDefinition(ItemID.TinGreaves),
+				new ItemDefinition(ItemID.IronChainmail),
+				new ItemDefinition(ItemID.IronGreaves),
+				new ItemDefinition(ItemID.LeadChainmail),
+				new ItemDefinition(ItemID.LeadGreaves)
 			};
 		
-		[Label("[i:SWATHelmet] Heavy Rattle Rustle Whitelist")]
+		[Label("[i:IronBar] Heavy Rattle Rustle Whitelist")]
 		public List<ItemDefinition> itemRustleRattleHeavyWhitelist = new List<ItemDefinition>
 			{
+				new ItemDefinition(ItemID.SilverChainmail),
+				new ItemDefinition(ItemID.SilverGreaves),
+				new ItemDefinition(ItemID.TungstenChainmail),
+				new ItemDefinition(ItemID.TungstenGreaves),
+				new ItemDefinition(ItemID.GoldChainmail),
+				new ItemDefinition(ItemID.GoldGreaves),
+				new ItemDefinition(ItemID.PlatinumChainmail),
+				new ItemDefinition(ItemID.PlatinumGreaves),
 				new ItemDefinition(ItemID.BeetleShell),
 				new ItemDefinition(ItemID.BeetleLeggings)
 			};
