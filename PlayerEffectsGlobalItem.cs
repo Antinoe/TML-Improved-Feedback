@@ -38,9 +38,25 @@ namespace PlayerEffects
 			{
 				pep.itemRustleClothHeavy = true;
 			}
+			if (PlayerEffectsConfigClient.Instance.itemRustleRattleLightWhitelist.Contains(new ItemDefinition(item.type)))
+			{
+				pep.itemRustleRattleLight = true;
+			}
+			if (PlayerEffectsConfigClient.Instance.itemRustleRattleHeavyWhitelist.Contains(new ItemDefinition(item.type)))
+			{
+				pep.itemRustleRattleHeavy = true;
+			}
 			if (PlayerEffectsConfigClient.Instance.itemRustleAramidHeavyWhitelist.Contains(new ItemDefinition(item.type)))
 			{
 				pep.itemRustleAramidHeavy = true;
+			}
+			if (PlayerEffectsConfigClient.Instance.itemStepRubberFlipflopWhitelist.Contains(new ItemDefinition(item.type)))
+			{
+				pep.itemStepRubberFlipflop = true;
+			}
+			if (PlayerEffectsConfigClient.Instance.itemStepLeatherBootLightWhitelist.Contains(new ItemDefinition(item.type)))
+			{
+				pep.itemStepLeatherBootLight = true;
 			}
 			if (PlayerEffectsConfigClient.Instance.itemStepLeatherBootMediumWhitelist.Contains(new ItemDefinition(item.type)))
 			{

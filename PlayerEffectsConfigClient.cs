@@ -3,6 +3,8 @@ using System.ComponentModel;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
+//using static MetroidMod.MetroidMod;
+//using static MetroidMod.Content.Items.Armors;
 
 namespace PlayerEffects
 {
@@ -33,49 +35,69 @@ namespace PlayerEffects
         [DefaultValue(false)]
         public bool enableVanillaSounds {get; set;}
 		
+		[Label("[i:HermesBoots] Rubber Flip-Flop Step Whitelist")]
+		public List<ItemDefinition> itemStepRubberFlipflopWhitelist = new List<ItemDefinition>
+			{
+			};
+		
+		[Label("[i:HermesBoots] Light Leather Boot Step Whitelist")]
+		public List<ItemDefinition> itemStepLeatherBootLightWhitelist = new List<ItemDefinition>
+			{
+				new ItemDefinition(ItemID.HermesBoots),
+				new ItemDefinition(ItemID.WoodGreaves),
+				new ItemDefinition(ItemID.CopperGreaves),
+				new ItemDefinition(ItemID.TinGreaves),
+				new ItemDefinition(ItemID.IronGreaves),
+				new ItemDefinition(ItemID.LeadGreaves),
+				new ItemDefinition(ItemID.GoldGreaves),
+				new ItemDefinition(ItemID.PlatinumGreaves)
+			};
+		
 		[Label("[i:HermesBoots] Medium Leather Boot Step Whitelist")]
-		[Tooltip("Accessories/Armor/Vanity in this list will, when equipped, play the respective sound upon Stepping.")]
 		public List<ItemDefinition> itemStepLeatherBootMediumWhitelist = new List<ItemDefinition>
 			{
-				new ItemDefinition(ItemID.HermesBoots)
 			};
 		
 		[Label("[i:HermesBoots] Heavy Leather Boot Step Whitelist")]
-		[Tooltip("Accessories/Armor/Vanity in this list will, when equipped, play the respective sound upon Stepping.")]
 		public List<ItemDefinition> itemStepLeatherBootHeavyWhitelist = new List<ItemDefinition>
 			{
 				//new ItemDefinition(ModContent.ItemType<PowerSuitGreaves>())
 			};
 		
 		[Label("[i:Cobweb] Light Cloth Rustle Whitelist")]
-		[Tooltip("Accessories/Armor/Vanity in this list will, when equipped, play the respective sound upon Stepping.")]
 		public List<ItemDefinition> itemRustleClothLightWhitelist = new List<ItemDefinition>
 			{
-				new ItemDefinition(ItemID.WoodHelmet),
 				new ItemDefinition(ItemID.WoodBreastplate),
 				new ItemDefinition(ItemID.WoodGreaves)
 			};
 		
 		[Label("[i:Silk] Medium Cloth Rustle Whitelist")]
-		[Tooltip("Accessories/Armor/Vanity in this list will, when equipped, play the respective sound upon Stepping.")]
 		public List<ItemDefinition> itemRustleClothMediumWhitelist = new List<ItemDefinition>
 			{
-				new ItemDefinition(ItemID.CopperHelmet),
 				new ItemDefinition(ItemID.CopperChainmail),
 				new ItemDefinition(ItemID.CopperGreaves)
 			};
 		
 		[Label("[i:Leather] Heavy Cloth Rustle Whitelist")]
-		[Tooltip("Accessories/Armor/Vanity in this list will, when equipped, play the respective sound upon Stepping.")]
 		public List<ItemDefinition> itemRustleClothHeavyWhitelist = new List<ItemDefinition>
 			{
-				new ItemDefinition(ItemID.IronHelmet),
 				new ItemDefinition(ItemID.IronChainmail),
 				new ItemDefinition(ItemID.IronGreaves)
 			};
 		
+		[Label("[i:SWATHelmet] Light Rattle Rustle Whitelist")]
+		public List<ItemDefinition> itemRustleRattleLightWhitelist = new List<ItemDefinition>
+			{
+			};
+		
+		[Label("[i:SWATHelmet] Heavy Rattle Rustle Whitelist")]
+		public List<ItemDefinition> itemRustleRattleHeavyWhitelist = new List<ItemDefinition>
+			{
+				new ItemDefinition(ItemID.BeetleShell),
+				new ItemDefinition(ItemID.BeetleLeggings)
+			};
+		
 		[Label("[i:SWATHelmet] Heavy Aramid Rustle Whitelist")]
-		[Tooltip("Accessories/Armor/Vanity in this list will, when equipped, play the respective sound upon Stepping.")]
 		public List<ItemDefinition> itemRustleAramidHeavyWhitelist = new List<ItemDefinition>
 			{
 				new ItemDefinition(ItemID.BeetleShell),

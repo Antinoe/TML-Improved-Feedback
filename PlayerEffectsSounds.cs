@@ -12,6 +12,18 @@ namespace PlayerEffects
 				PitchVariance = 0.5f,
 				MaxInstances = 12
 			};
+			public static readonly SoundStyle StepRubberFlipflop = new($"{nameof(PlayerEffects)}/Assets/Sounds/Materials/StepRubberFlipflop", 2)
+			{
+				Volume = 0.25f,
+				PitchVariance = 0.5f,
+				MaxInstances = 12
+			};
+			public static readonly SoundStyle StepLeatherBootLight = new($"{nameof(PlayerEffects)}/Assets/Sounds/Materials/StepLeatherBootLight", 5)
+			{
+				Volume = 0.25f,
+				PitchVariance = 0.5f,
+				MaxInstances = 12
+			};
 			public static readonly SoundStyle StepLeatherBootMedium = new($"{nameof(PlayerEffects)}/Assets/Sounds/Materials/StepLeatherBootMedium", 12)
 			{
 				Volume = 0.35f,
@@ -42,6 +54,12 @@ namespace PlayerEffects
 				PitchVariance = 0.5f,
 				MaxInstances = 12
 			};
+			public static readonly SoundStyle LandLeatherBootLight = new($"{nameof(PlayerEffects)}/Assets/Sounds/Materials/LandLeatherBootLight", 6)
+			{
+				Volume = 0.35f,
+				PitchVariance = 0.5f,
+				MaxInstances = 12
+			};
 			public static readonly SoundStyle LandLeatherBootMedium = new($"{nameof(PlayerEffects)}/Assets/Sounds/Materials/LandLeatherBootMedium", 5)
 			{
 				Volume = 0.35f,
@@ -66,9 +84,21 @@ namespace PlayerEffects
 				PitchVariance = 0.5f,
 				MaxInstances = 12
 			};
-			public static readonly SoundStyle RustleClothHeavy = new($"{nameof(PlayerEffects)}/Assets/Sounds/Materials/RustleClothHeavy", 2)
+			public static readonly SoundStyle RustleClothHeavy = new($"{nameof(PlayerEffects)}/Assets/Sounds/Materials/RustleClothHeavy", 4)
 			{
 				Volume = 0.35f,
+				PitchVariance = 0.5f,
+				MaxInstances = 12
+			};
+			public static readonly SoundStyle RustleRattleLight = new($"{nameof(PlayerEffects)}/Assets/Sounds/Materials/RustleRattleLight", 6)
+			{
+				Volume = 0.15f,
+				PitchVariance = 0.5f,
+				MaxInstances = 12
+			};
+			public static readonly SoundStyle RustleRattleHeavy = new($"{nameof(PlayerEffects)}/Assets/Sounds/Materials/RustleRattleHeavy", 5)
+			{
+				Volume = 0.25f,
 				PitchVariance = 0.5f,
 				MaxInstances = 12
 			};
