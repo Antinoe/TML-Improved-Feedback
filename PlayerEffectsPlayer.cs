@@ -16,18 +16,35 @@ namespace PlayerEffects
 {
     public class PlayerEffectsPlayer : ModPlayer
     {
-		protected bool stepping;
-		protected bool inAir;
-		protected bool jumping;
-		protected bool landing;
-		protected int screenShakeTimerVeryWeak;
-		protected int screenShakeTimerWeak;
-		protected int screenShakeTimerModerate;
-		protected int screenShakeTimerStrong;
+		public bool stepping;
+		public bool inAir;
+		public bool jumping;
+		public bool landing;
+		public bool itemRustleClothLight;
+		public bool itemRustleClothMedium;
+		public bool itemRustleClothHeavy;
+		public bool itemRustleAramidHeavy;
+		public bool itemStepLeatherBootMedium;
+		public bool itemStepLeatherBootHeavy;
+		public int screenShakeTimerVeryWeak;
+		public int screenShakeTimerWeak;
+		public int screenShakeTimerModerate;
+		public int screenShakeTimerStrong;
+		
+        public override void ResetEffects()
+        {
+			itemRustleClothLight = false;
+			itemRustleClothMedium = false;
+			itemRustleClothHeavy = false;
+			itemRustleAramidHeavy = false;
+			itemStepLeatherBootMedium = false;
+			itemStepLeatherBootHeavy = false;
+        }
 		
 		public override void PostUpdateMiscEffects()
 		{
 			Player Player = Main.LocalPlayer;
+			PlayerEffectsPlayer pep = Player.GetModPlayer<PlayerEffectsPlayer>();
 			
 			if (screenShakeTimerVeryWeak > 0)
 			{
@@ -49,14 +66,45 @@ namespace PlayerEffects
 			if (!Player.mount.Active)
 			{
 				//Stepping
-				if (Player.legFrame.Y == Player.legFrame.Height * 10 || Player.legFrame.Y == Player.legFrame.Height * 16)
+				if (Player.legFrame.Y == Player.legFrame.Height * 9 || Player.legFrame.Y == Player.legFrame.Height * 16)
 				{
 					if (!stepping)
 					{
 						stepping = true;
 						if (PlayerEffectsConfigClient.Instance.enableSounds)
 						{
-							SoundEngine.PlaySound(Sounds.Player.Step, Player.position);
+							//I'm well aware of how unoptimized this file is. I'll fix it soon.
+							if (!pep.itemStepLeatherBootMedium && !pep.itemStepLeatherBootHeavy)
+							{
+								SoundEngine.PlaySound(Sounds.Player.Step, Player.position);
+							}
+							else
+							{
+								if (pep.itemStepLeatherBootMedium)
+								{
+									SoundEngine.PlaySound(Sounds.Player.StepLeatherBootMedium, Player.position);
+								}
+								if (pep.itemStepLeatherBootHeavy)
+								{
+									SoundEngine.PlaySound(Sounds.Player.StepLeatherBootHeavy, Player.position);
+								}
+							}
+							if (pep.itemRustleClothLight)
+							{
+								SoundEngine.PlaySound(Sounds.Player.RustleClothLight, Player.position);
+							}
+							if (pep.itemRustleClothMedium)
+							{
+								SoundEngine.PlaySound(Sounds.Player.RustleClothMedium, Player.position);
+							}
+							if (pep.itemRustleClothHeavy)
+							{
+								SoundEngine.PlaySound(Sounds.Player.RustleClothHeavy, Player.position);
+							}
+							if (pep.itemRustleAramidHeavy)
+							{
+								SoundEngine.PlaySound(Sounds.Player.RustleAramidHeavy, Player.position);
+							}
 						}
 					}
 				}
@@ -72,7 +120,37 @@ namespace PlayerEffects
 						jumping = true;
 						if (PlayerEffectsConfigClient.Instance.enableSounds)
 						{
-							SoundEngine.PlaySound(Sounds.Player.Jump, Player.position);
+							if (!pep.itemStepLeatherBootMedium && !pep.itemStepLeatherBootHeavy)
+							{
+								SoundEngine.PlaySound(Sounds.Player.Step, Player.position);
+							}
+							else
+							{
+								if (pep.itemStepLeatherBootMedium)
+								{
+									SoundEngine.PlaySound(Sounds.Player.JumpLeatherBootMedium, Player.position);
+								}
+								if (pep.itemStepLeatherBootHeavy)
+								{
+									SoundEngine.PlaySound(Sounds.Player.LandLeatherBootHeavy, Player.position);
+								}
+							}
+							if (pep.itemRustleClothLight)
+							{
+								SoundEngine.PlaySound(Sounds.Player.RustleClothLight, Player.position);
+							}
+							if (pep.itemRustleClothMedium)
+							{
+								SoundEngine.PlaySound(Sounds.Player.RustleClothMedium, Player.position);
+							}
+							if (pep.itemRustleClothHeavy)
+							{
+								SoundEngine.PlaySound(Sounds.Player.RustleClothHeavy, Player.position);
+							}
+							if (pep.itemRustleAramidHeavy)
+							{
+								SoundEngine.PlaySound(Sounds.Player.RustleAramidHeavy, Player.position);
+							}
 						}
 					}
 				}
@@ -96,7 +174,43 @@ namespace PlayerEffects
 						landing = true;
 						if (PlayerEffectsConfigClient.Instance.enableSounds)
 						{
-							SoundEngine.PlaySound(Sounds.Player.Land, Player.position);
+							if (!pep.itemStepLeatherBootMedium && !pep.itemStepLeatherBootHeavy)
+							{
+								SoundEngine.PlaySound(Sounds.Player.Step, Player.position);
+								SoundEngine.PlaySound(Sounds.Player.Step, Player.position);
+							}
+							else
+							{
+								if (pep.itemStepLeatherBootMedium)
+								{
+									SoundEngine.PlaySound(Sounds.Player.LandLeatherBootMedium, Player.position);
+								}
+								if (pep.itemStepLeatherBootHeavy)
+								{
+									SoundEngine.PlaySound(Sounds.Player.LandLeatherBootHeavy, Player.position);
+									SoundEngine.PlaySound(Sounds.Player.LandLeatherBootHeavy, Player.position);
+								}
+							}
+							if (pep.itemRustleClothLight)
+							{
+								SoundEngine.PlaySound(Sounds.Player.RustleClothLight, Player.position);
+								SoundEngine.PlaySound(Sounds.Player.RustleClothLight, Player.position);
+							}
+							if (pep.itemRustleClothMedium)
+							{
+								SoundEngine.PlaySound(Sounds.Player.RustleClothMedium, Player.position);
+								SoundEngine.PlaySound(Sounds.Player.RustleClothMedium, Player.position);
+							}
+							if (pep.itemRustleClothHeavy)
+							{
+								SoundEngine.PlaySound(Sounds.Player.RustleClothHeavy, Player.position);
+								SoundEngine.PlaySound(Sounds.Player.RustleClothHeavy, Player.position);
+							}
+							if (pep.itemRustleAramidHeavy)
+							{
+								SoundEngine.PlaySound(Sounds.Player.RustleAramidHeavy, Player.position);
+								SoundEngine.PlaySound(Sounds.Player.RustleAramidHeavy, Player.position);
+							}
 						}
 						if (PlayerEffectsConfigClient.Instance.enableScreenshake)
 						{
