@@ -1,7 +1,7 @@
 author = Antinous
 version = 1.0
-displayName = Player Effects
-homepage = https://github.com/Antinoe/Player-Effects
+displayName = Improved Effects
+homepage = https://github.com/Antinoe/Improved-Effects
 hideCode = false
 hideResources = false
 includeSource = true

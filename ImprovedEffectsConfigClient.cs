@@ -6,15 +6,15 @@ using Terraria.ModLoader.Config;
 //using static MetroidMod.MetroidMod;
 //using static MetroidMod.Content.Items.Armors;
 
-namespace PlayerEffects
+namespace ImprovedEffects
 {
     [Label("Client Config")]
-    public class PlayerEffectsConfigClient : ModConfig
+    public class ImprovedEffectsConfigClient : ModConfig
     {
         //This is here for the Config to work at all.
         public override ConfigScope Mode => ConfigScope.ClientSide;
 		
-        public static PlayerEffectsConfigClient Instance;
+        public static ImprovedEffectsConfigClient Instance;
 		
 	[Header("[i:Nazar] Visual")]
 		

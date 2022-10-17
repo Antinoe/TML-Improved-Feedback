@@ -12,9 +12,9 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.Mount;
 
-namespace PlayerEffects
+namespace ImprovedEffects
 {
-    public class PlayerEffectsPlayer : ModPlayer
+    public class ImprovedEffectsPlayer : ModPlayer
     {
 		public bool stepping;
 		public bool inAir;
@@ -52,7 +52,7 @@ namespace PlayerEffects
 		public override void PostUpdateMiscEffects()
 		{
 			Player Player = Main.LocalPlayer;
-			PlayerEffectsPlayer pep = Player.GetModPlayer<PlayerEffectsPlayer>();
+			ImprovedEffectsPlayer pep = Player.GetModPlayer<ImprovedEffectsPlayer>();
 			
 			if (screenShakeTimerVeryWeak > 0)
 			{
@@ -79,7 +79,7 @@ namespace PlayerEffects
 					if (!stepping)
 					{
 						stepping = true;
-						if (PlayerEffectsConfigClient.Instance.enableSounds)
+						if (ImprovedEffectsConfigClient.Instance.enableSounds)
 						{
 							//I'm well aware of how unoptimized this file is. I'll fix it soon.
 							if (!pep.itemStepRubberFlipflop && !pep.itemStepLeatherBootLight && !pep.itemStepLeatherBootMedium && !pep.itemStepLeatherBootHeavy)
@@ -142,7 +142,7 @@ namespace PlayerEffects
 					if (!jumping)
 					{
 						jumping = true;
-						if (PlayerEffectsConfigClient.Instance.enableSounds)
+						if (ImprovedEffectsConfigClient.Instance.enableSounds)
 						{
 							if (!pep.itemStepRubberFlipflop && !pep.itemStepLeatherBootLight && !pep.itemStepLeatherBootMedium && !pep.itemStepLeatherBootHeavy)
 							{
@@ -201,7 +201,7 @@ namespace PlayerEffects
 				//Falling
 				if (Player.velocity.Y > 10)
 				{
-					if (PlayerEffectsConfigClient.Instance.enableScreenshake)
+					if (ImprovedEffectsConfigClient.Instance.enableScreenshake)
 					{
 						screenShakeTimerWeak = 5;
 					}
@@ -212,7 +212,7 @@ namespace PlayerEffects
 					if (!landing)
 					{
 						landing = true;
-						if (PlayerEffectsConfigClient.Instance.enableSounds)
+						if (ImprovedEffectsConfigClient.Instance.enableSounds)
 						{
 							if (!pep.itemStepRubberFlipflop && !pep.itemStepLeatherBootLight && !pep.itemStepLeatherBootMedium && !pep.itemStepLeatherBootHeavy)
 							{
@@ -271,7 +271,7 @@ namespace PlayerEffects
 								SoundEngine.PlaySound(Sounds.Player.RustleAramidHeavy, Player.position);
 							}
 						}
-						if (PlayerEffectsConfigClient.Instance.enableScreenshake)
+						if (ImprovedEffectsConfigClient.Instance.enableScreenshake)
 						{
 							screenShakeTimerVeryWeak = 10;
 						}
