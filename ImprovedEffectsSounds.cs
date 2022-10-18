@@ -12,6 +12,12 @@ namespace ImprovedEffects
 				PitchVariance = 0.15f,
 				MaxInstances = 12
 			};
+			public static readonly SoundStyle Skid = new($"{nameof(ImprovedEffects)}/Assets/Sounds/Materials/Skid", 5)
+			{
+				Volume = 0.75f,
+				PitchVariance = 0.15f,
+				MaxInstances = 12
+			};
 			public static readonly SoundStyle StepRubberFlipflop = new($"{nameof(ImprovedEffects)}/Assets/Sounds/Materials/StepRubberFlipflop", 2)
 			{
 				Volume = 0.25f,
