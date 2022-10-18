@@ -108,6 +108,24 @@ namespace ImprovedEffects
 				PitchVariance = 0.5f,
 				MaxInstances = 12
 			};
+			public static readonly SoundStyle HitWeak = new($"{nameof(ImprovedEffects)}/Assets/Sounds/HitWeak", 9)
+			{
+				Volume = 0.50f,
+				PitchVariance = 0.5f,
+				MaxInstances = 12
+			};
+			public static readonly SoundStyle HitModerate = new($"{nameof(ImprovedEffects)}/Assets/Sounds/HitModerate", 5)
+			{
+				Volume = 0.50f,
+				PitchVariance = 0.5f,
+				MaxInstances = 12
+			};
+			public static readonly SoundStyle HitHard = new($"{nameof(ImprovedEffects)}/Assets/Sounds/HitHard", 5)
+			{
+				Volume = 0.50f,
+				PitchVariance = 0.5f,
+				MaxInstances = 12
+			};
 		}
 	}
 }

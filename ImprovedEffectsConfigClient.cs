@@ -35,6 +35,11 @@ namespace ImprovedEffects
         [DefaultValue(false)]
         public bool enableVanillaSounds {get; set;}
 		
+        [Label("[i:Bone] Enable Dynamic Damage Effects")]
+        [Tooltip("If true, the Player Hurt sound will depend on certain conditions. (Attire, Damage dealt, etc.)\n[Default: On]")]
+        [DefaultValue(true)]
+        public bool enableDynamicDamageEffects {get; set;}
+		
 		[Label("[i:HermesBoots] Rubber Flip-Flop Step Whitelist")]
 		public List<ItemDefinition> itemStepRubberFlipflopWhitelist = new List<ItemDefinition>
 			{
