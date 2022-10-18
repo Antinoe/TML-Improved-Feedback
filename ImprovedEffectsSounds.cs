@@ -36,21 +36,9 @@ namespace ImprovedEffects
 				PitchVariance = 0.5f,
 				MaxInstances = 12
 			};
-			public static readonly SoundStyle Jump = new($"{nameof(ImprovedEffects)}/Assets/Sounds/Run", 4)
-			{
-				Volume = 0.15f,
-				PitchVariance = 0.5f,
-				MaxInstances = 12
-			};
 			public static readonly SoundStyle JumpLeatherBootMedium = new($"{nameof(ImprovedEffects)}/Assets/Sounds/Materials/JumpLeatherBootMedium", 4)
 			{
 				Volume = 0.35f,
-				PitchVariance = 0.5f,
-				MaxInstances = 12
-			};
-			public static readonly SoundStyle Land = new($"{nameof(ImprovedEffects)}/Assets/Sounds/Run", 4)
-			{
-				Volume = 0.15f,
 				PitchVariance = 0.5f,
 				MaxInstances = 12
 			};

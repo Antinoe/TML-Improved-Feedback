@@ -17,6 +17,7 @@ namespace ImprovedEffects
     public class ImprovedEffectsPlayer : ModPlayer
     {
 		public bool stepping;
+		public bool skidding;
 		public bool inAir;
 		public bool jumping;
 		public bool landing;
@@ -135,6 +136,68 @@ namespace ImprovedEffects
 				else
 				{
 					stepping = false;
+				}
+				//Skidding
+				if (Player.velocity.X == 0 && Player.velocity.Y == 0)
+				{
+					if (!skidding)
+					{
+						skidding = true;
+						if (ImprovedEffectsConfigClient.Instance.enableSounds)
+						{
+							if (!pep.itemStepRubberFlipflop && !pep.itemStepLeatherBootLight && !pep.itemStepLeatherBootMedium && !pep.itemStepLeatherBootHeavy)
+							{
+								SoundEngine.PlaySound(Sounds.Player.Step, Player.position);
+							}
+							else
+							{
+								if (pep.itemStepRubberFlipflop)
+								{
+									SoundEngine.PlaySound(Sounds.Player.StepRubberFlipflop, Player.position);
+								}
+								if (pep.itemStepLeatherBootLight)
+								{
+									SoundEngine.PlaySound(Sounds.Player.StepLeatherBootLight, Player.position);
+								}
+								if (pep.itemStepLeatherBootMedium)
+								{
+									SoundEngine.PlaySound(Sounds.Player.StepLeatherBootMedium, Player.position);
+								}
+								if (pep.itemStepLeatherBootHeavy)
+								{
+									SoundEngine.PlaySound(Sounds.Player.StepLeatherBootHeavy, Player.position);
+								}
+							}
+							if (pep.itemRustleClothLight)
+							{
+								SoundEngine.PlaySound(Sounds.Player.RustleClothLight, Player.position);
+							}
+							if (pep.itemRustleClothMedium)
+							{
+								SoundEngine.PlaySound(Sounds.Player.RustleClothMedium, Player.position);
+							}
+							if (pep.itemRustleClothHeavy)
+							{
+								SoundEngine.PlaySound(Sounds.Player.RustleClothHeavy, Player.position);
+							}
+							if (pep.itemRustleRattleLight)
+							{
+								SoundEngine.PlaySound(Sounds.Player.RustleRattleLight, Player.position);
+							}
+							if (pep.itemRustleRattleHeavy)
+							{
+								SoundEngine.PlaySound(Sounds.Player.RustleRattleHeavy, Player.position);
+							}
+							if (pep.itemRustleAramidHeavy)
+							{
+								SoundEngine.PlaySound(Sounds.Player.RustleAramidHeavy, Player.position);
+							}
+						}
+					}
+				}
+				else
+				{
+					skidding = false;
 				}
 				//Jumping
 				if (Player.velocity.Y < 0 && Player.controlJump)
