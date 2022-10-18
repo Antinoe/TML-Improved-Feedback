@@ -17,6 +17,7 @@ namespace ImprovedEffects
     public class ImprovedEffectsPlayer : ModPlayer
     {
 		public bool stepping;
+		public bool skidding;
 		public bool inAir;
 		public bool jumping;
 		public bool landing;
@@ -135,6 +136,29 @@ namespace ImprovedEffects
 				else
 				{
 					stepping = false;
+				}
+				//Skidding
+				if (Player.velocity.X == 0 && Player.velocity.Y == 0)
+				{
+					if (!skidding)
+					{
+						skidding = true;
+						if (ImprovedEffectsConfigClient.Instance.enableSounds)
+						{
+							if (!pep.itemStepRubberFlipflop && !pep.itemStepLeatherBootLight && !pep.itemStepLeatherBootMedium && !pep.itemStepLeatherBootHeavy)
+							{
+								SoundEngine.PlaySound(Sounds.Player.Step, Player.position);
+							}
+							else
+							{
+								SoundEngine.PlaySound(Sounds.Player.Skid, Player.position);
+							}
+						}
+					}
+				}
+				else
+				{
+					skidding = false;
 				}
 				//Jumping
 				if (Player.velocity.Y < 0 && Player.controlJump)
@@ -306,6 +330,39 @@ namespace ImprovedEffects
 				Main.screenPosition.X += (float)Math.Round(Main.rand.Next((int)(0f - 1), (int)1) * 4.00f);
 				Main.screenPosition.Y += (float)Math.Round(Main.rand.Next((int)(0f - 1), (int)1) * 4.00f);
             }
+		}
+		
+		public override bool PreHurt(bool pvp, bool quiet, ref int damage, ref int hitDirection, ref bool crit, ref bool customDamage, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource, ref int cooldownCounter)
+		{
+			if (ImprovedEffectsConfigClient.Instance.enableDynamicDamageEffects)
+			{
+				playSound = false;
+			}
+			return true;
+		}
+		public override void PostHurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit, int cooldownCounter)
+		{
+			if (ImprovedEffectsConfigClient.Instance.enableDynamicDamageEffects)
+			{
+				//if (damage == (int)(Player.statLifeMax * 0.25))
+				if (damage > 0 && damage < 5)
+				{
+					SoundEngine.PlaySound(Sounds.Player.HitWeak, Player.position);
+					if (ImprovedEffectsConfigClient.Instance.enableScreenshake)	{screenShakeTimerWeak = 10;}
+				}
+				//if (damage == (int)(Player.statLifeMax * 0.50))
+				if (damage >= 5 && damage < 15)
+				{
+					SoundEngine.PlaySound(Sounds.Player.HitModerate, Player.position);
+					if (ImprovedEffectsConfigClient.Instance.enableScreenshake)	{screenShakeTimerModerate = 15;}
+				}
+				//if (damage == (int)(Player.statLifeMax * 0.75))
+				if (damage >= 15)
+				{
+					SoundEngine.PlaySound(Sounds.Player.HitHard, Player.position);
+					if (ImprovedEffectsConfigClient.Instance.enableScreenshake)	{screenShakeTimerStrong = 20;}
+				}
+			}
 		}
     }
 }
