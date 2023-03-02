@@ -12,9 +12,9 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.Mount;
 
-namespace ImprovedEffects
+namespace ImprovedFeedback
 {
-    public class ImprovedEffectsPlayer : ModPlayer
+    public class ImprovedFeedbackPlayer : ModPlayer
     {
 		public bool stepping;
 		public bool skidding;
@@ -53,7 +53,7 @@ namespace ImprovedEffects
 		public override void PostUpdateMiscEffects()
 		{
 			Player Player = Main.LocalPlayer;
-			ImprovedEffectsPlayer pep = Player.GetModPlayer<ImprovedEffectsPlayer>();
+			ImprovedFeedbackPlayer pep = Player.GetModPlayer<ImprovedFeedbackPlayer>();
 			
 			if (screenShakeTimerVeryWeak > 0)
 			{
@@ -80,7 +80,7 @@ namespace ImprovedEffects
 					if (!stepping)
 					{
 						stepping = true;
-						if (ImprovedEffectsConfigClient.Instance.enableSounds)
+						if (ImprovedFeedbackConfigClient.Instance.enableSounds)
 						{
 							//I'm well aware of how unoptimized this file is. I'll fix it soon.
 							if (!pep.itemStepRubberFlipflop && !pep.itemStepLeatherBootLight && !pep.itemStepLeatherBootMedium && !pep.itemStepLeatherBootHeavy)
@@ -143,7 +143,7 @@ namespace ImprovedEffects
 					if (!skidding)
 					{
 						skidding = true;
-						if (ImprovedEffectsConfigClient.Instance.enableSounds)
+						if (ImprovedFeedbackConfigClient.Instance.enableSounds)
 						{
 							if (!pep.itemStepRubberFlipflop && !pep.itemStepLeatherBootLight && !pep.itemStepLeatherBootMedium && !pep.itemStepLeatherBootHeavy)
 							{
@@ -166,7 +166,7 @@ namespace ImprovedEffects
 					if (!jumping)
 					{
 						jumping = true;
-						if (ImprovedEffectsConfigClient.Instance.enableSounds)
+						if (ImprovedFeedbackConfigClient.Instance.enableSounds)
 						{
 							if (!pep.itemStepRubberFlipflop && !pep.itemStepLeatherBootLight && !pep.itemStepLeatherBootMedium && !pep.itemStepLeatherBootHeavy)
 							{
@@ -225,7 +225,7 @@ namespace ImprovedEffects
 				//Falling
 				if (Player.velocity.Y > 10)
 				{
-					if (ImprovedEffectsConfigClient.Instance.enableScreenshake)
+					if (ImprovedFeedbackConfigClient.Instance.enableScreenshake)
 					{
 						screenShakeTimerWeak = 5;
 					}
@@ -236,7 +236,7 @@ namespace ImprovedEffects
 					if (!landing)
 					{
 						landing = true;
-						if (ImprovedEffectsConfigClient.Instance.enableSounds)
+						if (ImprovedFeedbackConfigClient.Instance.enableSounds)
 						{
 							if (!pep.itemStepRubberFlipflop && !pep.itemStepLeatherBootLight && !pep.itemStepLeatherBootMedium && !pep.itemStepLeatherBootHeavy)
 							{
@@ -295,7 +295,7 @@ namespace ImprovedEffects
 								SoundEngine.PlaySound(Sounds.Player.RustleAramidHeavy, Player.position);
 							}
 						}
-						if (ImprovedEffectsConfigClient.Instance.enableScreenshake)
+						if (ImprovedFeedbackConfigClient.Instance.enableScreenshake)
 						{
 							screenShakeTimerVeryWeak = 10;
 						}
@@ -334,7 +334,7 @@ namespace ImprovedEffects
 		
 		public override bool PreHurt(bool pvp, bool quiet, ref int damage, ref int hitDirection, ref bool crit, ref bool customDamage, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource, ref int cooldownCounter)
 		{
-			if (ImprovedEffectsConfigClient.Instance.enableDynamicDamageEffects)
+			if (ImprovedFeedbackConfigClient.Instance.enableDynamicDamageEffects)
 			{
 				playSound = false;
 			}
@@ -342,25 +342,25 @@ namespace ImprovedEffects
 		}
 		public override void PostHurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit, int cooldownCounter)
 		{
-			if (ImprovedEffectsConfigClient.Instance.enableDynamicDamageEffects)
+			if (ImprovedFeedbackConfigClient.Instance.enableDynamicDamageEffects)
 			{
 				//if (damage == (int)(Player.statLifeMax * 0.25))
 				if (damage > 0 && damage < 5)
 				{
 					SoundEngine.PlaySound(Sounds.Player.HitWeak, Player.position);
-					if (ImprovedEffectsConfigClient.Instance.enableScreenshake)	{screenShakeTimerWeak = 10;}
+					if (ImprovedFeedbackConfigClient.Instance.enableScreenshake)	{screenShakeTimerWeak = 10;}
 				}
 				//if (damage == (int)(Player.statLifeMax * 0.50))
 				if (damage >= 5 && damage < 15)
 				{
 					SoundEngine.PlaySound(Sounds.Player.HitModerate, Player.position);
-					if (ImprovedEffectsConfigClient.Instance.enableScreenshake)	{screenShakeTimerModerate = 15;}
+					if (ImprovedFeedbackConfigClient.Instance.enableScreenshake)	{screenShakeTimerModerate = 15;}
 				}
 				//if (damage == (int)(Player.statLifeMax * 0.75))
 				if (damage >= 15)
 				{
 					SoundEngine.PlaySound(Sounds.Player.HitHard, Player.position);
-					if (ImprovedEffectsConfigClient.Instance.enableScreenshake)	{screenShakeTimerStrong = 20;}
+					if (ImprovedFeedbackConfigClient.Instance.enableScreenshake)	{screenShakeTimerStrong = 20;}
 				}
 			}
 		}
