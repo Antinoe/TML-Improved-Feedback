@@ -12,7 +12,7 @@ namespace ImprovedFeedback
 				PitchVariance = 0.15f,
 				MaxInstances = 12
 			};
-			public static readonly SoundStyle Skid = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Materials/Skid", 5)
+			public static readonly SoundStyle Skid = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Skid", 5)
 			{
 				Volume = 0.75f,
 				PitchVariance = 0.15f,
