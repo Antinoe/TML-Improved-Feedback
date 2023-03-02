@@ -1,7 +1,7 @@
 author = Antinous
 version = 1.0
-displayName = Improved Effects
-homepage = https://github.com/Antinoe/Improved-Effects
+displayName = Improved Feedback
+homepage = https://github.com/Antinoe/Improved-Feedback
 hideCode = false
 hideResources = false
 includeSource = true
