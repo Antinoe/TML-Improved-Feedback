@@ -52,8 +52,8 @@ namespace ImprovedFeedback
 		
 		public override void PostUpdateMiscEffects()
 		{
-			Player Player = Main.LocalPlayer;
-			ImprovedFeedbackPlayer pep = Player.GetModPlayer<ImprovedFeedbackPlayer>();
+			//var Player = Main.LocalPlayer;
+			var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
 			
 			if (screenShakeTimerVeryWeak > 0)
 			{
@@ -80,57 +80,7 @@ namespace ImprovedFeedback
 					if (!stepping)
 					{
 						stepping = true;
-						if (ImprovedFeedbackConfigClient.Instance.enableSounds)
-						{
-							//I'm well aware of how unoptimized this file is. I'll fix it soon.
-							if (!pep.itemStepRubberFlipflop && !pep.itemStepLeatherBootLight && !pep.itemStepLeatherBootMedium && !pep.itemStepLeatherBootHeavy)
-							{
-								SoundEngine.PlaySound(Sounds.Player.Step, Player.position);
-							}
-							else
-							{
-								if (pep.itemStepRubberFlipflop)
-								{
-									SoundEngine.PlaySound(Sounds.Player.StepRubberFlipflop, Player.position);
-								}
-								if (pep.itemStepLeatherBootLight)
-								{
-									SoundEngine.PlaySound(Sounds.Player.StepLeatherBootLight, Player.position);
-								}
-								if (pep.itemStepLeatherBootMedium)
-								{
-									SoundEngine.PlaySound(Sounds.Player.StepLeatherBootMedium, Player.position);
-								}
-								if (pep.itemStepLeatherBootHeavy)
-								{
-									SoundEngine.PlaySound(Sounds.Player.StepLeatherBootHeavy, Player.position);
-								}
-							}
-							if (pep.itemRustleClothLight)
-							{
-								SoundEngine.PlaySound(Sounds.Player.RustleClothLight, Player.position);
-							}
-							if (pep.itemRustleClothMedium)
-							{
-								SoundEngine.PlaySound(Sounds.Player.RustleClothMedium, Player.position);
-							}
-							if (pep.itemRustleClothHeavy)
-							{
-								SoundEngine.PlaySound(Sounds.Player.RustleClothHeavy, Player.position);
-							}
-							if (pep.itemRustleRattleLight)
-							{
-								SoundEngine.PlaySound(Sounds.Player.RustleRattleLight, Player.position);
-							}
-							if (pep.itemRustleRattleHeavy)
-							{
-								SoundEngine.PlaySound(Sounds.Player.RustleRattleHeavy, Player.position);
-							}
-							if (pep.itemRustleAramidHeavy)
-							{
-								SoundEngine.PlaySound(Sounds.Player.RustleAramidHeavy, Player.position);
-							}
-						}
+						OnStep();
 					}
 				}
 				else
@@ -143,17 +93,7 @@ namespace ImprovedFeedback
 					if (!skidding)
 					{
 						skidding = true;
-						if (ImprovedFeedbackConfigClient.Instance.enableSounds)
-						{
-							if (!pep.itemStepRubberFlipflop && !pep.itemStepLeatherBootLight && !pep.itemStepLeatherBootMedium && !pep.itemStepLeatherBootHeavy)
-							{
-								SoundEngine.PlaySound(Sounds.Player.Step, Player.position);
-							}
-							else
-							{
-								SoundEngine.PlaySound(Sounds.Player.Skid, Player.position);
-							}
-						}
+						OnSkid();
 					}
 				}
 				else
@@ -166,56 +106,6 @@ namespace ImprovedFeedback
 					if (!jumping)
 					{
 						jumping = true;
-						if (ImprovedFeedbackConfigClient.Instance.enableSounds)
-						{
-							if (!pep.itemStepRubberFlipflop && !pep.itemStepLeatherBootLight && !pep.itemStepLeatherBootMedium && !pep.itemStepLeatherBootHeavy)
-							{
-								SoundEngine.PlaySound(Sounds.Player.Step, Player.position);
-							}
-							else
-							{
-								if (pep.itemStepRubberFlipflop)
-								{
-									SoundEngine.PlaySound(Sounds.Player.StepRubberFlipflop, Player.position);
-								}
-								if (pep.itemStepLeatherBootLight)
-								{
-									SoundEngine.PlaySound(Sounds.Player.LandLeatherBootLight, Player.position);
-								}
-								if (pep.itemStepLeatherBootMedium)
-								{
-									SoundEngine.PlaySound(Sounds.Player.JumpLeatherBootMedium, Player.position);
-								}
-								if (pep.itemStepLeatherBootHeavy)
-								{
-									SoundEngine.PlaySound(Sounds.Player.LandLeatherBootHeavy, Player.position);
-								}
-							}
-							if (pep.itemRustleClothLight)
-							{
-								SoundEngine.PlaySound(Sounds.Player.RustleClothLight, Player.position);
-							}
-							if (pep.itemRustleClothMedium)
-							{
-								SoundEngine.PlaySound(Sounds.Player.RustleClothMedium, Player.position);
-							}
-							if (pep.itemRustleClothHeavy)
-							{
-								SoundEngine.PlaySound(Sounds.Player.RustleClothHeavy, Player.position);
-							}
-							if (pep.itemRustleRattleLight)
-							{
-								SoundEngine.PlaySound(Sounds.Player.RustleRattleLight, Player.position);
-							}
-							if (pep.itemRustleRattleHeavy)
-							{
-								SoundEngine.PlaySound(Sounds.Player.RustleRattleHeavy, Player.position);
-							}
-							if (pep.itemRustleAramidHeavy)
-							{
-								SoundEngine.PlaySound(Sounds.Player.RustleAramidHeavy, Player.position);
-							}
-						}
 					}
 				}
 				else
@@ -225,10 +115,7 @@ namespace ImprovedFeedback
 				//Falling
 				if (Player.velocity.Y > 10)
 				{
-					if (ImprovedFeedbackConfigClient.Instance.enableScreenshake)
-					{
-						screenShakeTimerWeak = 5;
-					}
+					OnFalling();
 				}
 				//Landing
 				if (Player.velocity.Y == 0)
@@ -236,75 +123,222 @@ namespace ImprovedFeedback
 					if (!landing)
 					{
 						landing = true;
-						if (ImprovedFeedbackConfigClient.Instance.enableSounds)
-						{
-							if (!pep.itemStepRubberFlipflop && !pep.itemStepLeatherBootLight && !pep.itemStepLeatherBootMedium && !pep.itemStepLeatherBootHeavy)
-							{
-								SoundEngine.PlaySound(Sounds.Player.Step, Player.position);
-								SoundEngine.PlaySound(Sounds.Player.Step, Player.position);
-							}
-							else
-							{
-								if (pep.itemStepRubberFlipflop)
-								{
-									SoundEngine.PlaySound(Sounds.Player.StepRubberFlipflop, Player.position);
-									SoundEngine.PlaySound(Sounds.Player.StepRubberFlipflop, Player.position);
-								}
-								if (pep.itemStepLeatherBootLight)
-								{
-									SoundEngine.PlaySound(Sounds.Player.LandLeatherBootLight, Player.position);
-								}
-								if (pep.itemStepLeatherBootMedium)
-								{
-									SoundEngine.PlaySound(Sounds.Player.LandLeatherBootMedium, Player.position);
-								}
-								if (pep.itemStepLeatherBootHeavy)
-								{
-									SoundEngine.PlaySound(Sounds.Player.LandLeatherBootHeavy, Player.position);
-									SoundEngine.PlaySound(Sounds.Player.LandLeatherBootHeavy, Player.position);
-								}
-							}
-							if (pep.itemRustleClothLight)
-							{
-								SoundEngine.PlaySound(Sounds.Player.RustleClothLight, Player.position);
-								SoundEngine.PlaySound(Sounds.Player.RustleClothLight, Player.position);
-							}
-							if (pep.itemRustleClothMedium)
-							{
-								SoundEngine.PlaySound(Sounds.Player.RustleClothMedium, Player.position);
-								SoundEngine.PlaySound(Sounds.Player.RustleClothMedium, Player.position);
-							}
-							if (pep.itemRustleClothHeavy)
-							{
-								SoundEngine.PlaySound(Sounds.Player.RustleClothHeavy, Player.position);
-								SoundEngine.PlaySound(Sounds.Player.RustleClothHeavy, Player.position);
-							}
-							if (pep.itemRustleRattleLight)
-							{
-								SoundEngine.PlaySound(Sounds.Player.RustleRattleLight, Player.position);
-								SoundEngine.PlaySound(Sounds.Player.RustleRattleLight, Player.position);
-							}
-							if (pep.itemRustleRattleHeavy)
-							{
-								SoundEngine.PlaySound(Sounds.Player.RustleRattleHeavy, Player.position);
-								SoundEngine.PlaySound(Sounds.Player.RustleRattleHeavy, Player.position);
-							}
-							if (pep.itemRustleAramidHeavy)
-							{
-								SoundEngine.PlaySound(Sounds.Player.RustleAramidHeavy, Player.position);
-								SoundEngine.PlaySound(Sounds.Player.RustleAramidHeavy, Player.position);
-							}
-						}
-						if (ImprovedFeedbackConfigClient.Instance.enableScreenshake)
-						{
-							screenShakeTimerVeryWeak = 10;
-						}
+						OnLand();
 					}
 				}
 				else
 				{
 					landing = false;
 				}
+			}
+		}
+		
+		/*
+		//	Actions called from PostUpdateMiscEffects.
+		*/
+		
+		public void OnStep()
+		{
+			var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
+			
+			if (ImprovedFeedbackConfigClient.Instance.enableSounds)
+			{
+				//I'm well aware of how unoptimized this file is. I'll fix it soon.
+				if (!ifp.itemStepRubberFlipflop && !ifp.itemStepLeatherBootLight && !ifp.itemStepLeatherBootMedium && !ifp.itemStepLeatherBootHeavy)
+				{
+					SoundEngine.PlaySound(Sounds.Player.Step, Player.position);
+				}
+				else
+				{
+					if (ifp.itemStepRubberFlipflop)
+					{
+						SoundEngine.PlaySound(Sounds.Player.StepRubberFlipflop, Player.position);
+					}
+					if (ifp.itemStepLeatherBootLight)
+					{
+						SoundEngine.PlaySound(Sounds.Player.StepLeatherBootLight, Player.position);
+					}
+					if (ifp.itemStepLeatherBootMedium)
+					{
+						SoundEngine.PlaySound(Sounds.Player.StepLeatherBootMedium, Player.position);
+					}
+					if (ifp.itemStepLeatherBootHeavy)
+					{
+						SoundEngine.PlaySound(Sounds.Player.StepLeatherBootHeavy, Player.position);
+					}
+				}
+				if (ifp.itemRustleClothLight)
+				{
+					SoundEngine.PlaySound(Sounds.Player.RustleClothLight, Player.position);
+				}
+				if (ifp.itemRustleClothMedium)
+				{
+					SoundEngine.PlaySound(Sounds.Player.RustleClothMedium, Player.position);
+				}
+				if (ifp.itemRustleClothHeavy)
+				{
+					SoundEngine.PlaySound(Sounds.Player.RustleClothHeavy, Player.position);
+				}
+				if (ifp.itemRustleRattleLight)
+				{
+					SoundEngine.PlaySound(Sounds.Player.RustleRattleLight, Player.position);
+				}
+				if (ifp.itemRustleRattleHeavy)
+				{
+					SoundEngine.PlaySound(Sounds.Player.RustleRattleHeavy, Player.position);
+				}
+				if (ifp.itemRustleAramidHeavy)
+				{
+					SoundEngine.PlaySound(Sounds.Player.RustleAramidHeavy, Player.position);
+				}
+			}
+		}
+		public void OnSkid()
+		{
+			var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
+			
+			if (ImprovedFeedbackConfigClient.Instance.enableSounds)
+			{
+				if (!ifp.itemStepRubberFlipflop && !ifp.itemStepLeatherBootLight && !ifp.itemStepLeatherBootMedium && !ifp.itemStepLeatherBootHeavy)
+				{
+					SoundEngine.PlaySound(Sounds.Player.Step, Player.position);
+				}
+				else
+				{
+					SoundEngine.PlaySound(Sounds.Player.Skid, Player.position);
+				}
+			}
+		}
+		public void OnJump()
+		{
+			var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
+			
+			if (ImprovedFeedbackConfigClient.Instance.enableSounds)
+			{
+				if (!ifp.itemStepRubberFlipflop && !ifp.itemStepLeatherBootLight && !ifp.itemStepLeatherBootMedium && !ifp.itemStepLeatherBootHeavy)
+				{
+					SoundEngine.PlaySound(Sounds.Player.Step, Player.position);
+				}
+				else
+				{
+					if (ifp.itemStepRubberFlipflop)
+					{
+						SoundEngine.PlaySound(Sounds.Player.StepRubberFlipflop, Player.position);
+					}
+					if (ifp.itemStepLeatherBootLight)
+					{
+						SoundEngine.PlaySound(Sounds.Player.LandLeatherBootLight, Player.position);
+					}
+					if (ifp.itemStepLeatherBootMedium)
+					{
+						SoundEngine.PlaySound(Sounds.Player.JumpLeatherBootMedium, Player.position);
+					}
+					if (ifp.itemStepLeatherBootHeavy)
+					{
+						SoundEngine.PlaySound(Sounds.Player.LandLeatherBootHeavy, Player.position);
+					}
+				}
+				if (ifp.itemRustleClothLight)
+				{
+					SoundEngine.PlaySound(Sounds.Player.RustleClothLight, Player.position);
+				}
+				if (ifp.itemRustleClothMedium)
+				{
+					SoundEngine.PlaySound(Sounds.Player.RustleClothMedium, Player.position);
+				}
+				if (ifp.itemRustleClothHeavy)
+				{
+					SoundEngine.PlaySound(Sounds.Player.RustleClothHeavy, Player.position);
+				}
+				if (ifp.itemRustleRattleLight)
+				{
+					SoundEngine.PlaySound(Sounds.Player.RustleRattleLight, Player.position);
+				}
+				if (ifp.itemRustleRattleHeavy)
+				{
+					SoundEngine.PlaySound(Sounds.Player.RustleRattleHeavy, Player.position);
+				}
+				if (ifp.itemRustleAramidHeavy)
+				{
+					SoundEngine.PlaySound(Sounds.Player.RustleAramidHeavy, Player.position);
+				}
+			}
+		}
+		public void OnFalling()
+		{
+			var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
+			
+			if (ImprovedFeedbackConfigClient.Instance.enableScreenshake)
+			{
+				screenShakeTimerWeak = 5;
+			}
+		}
+		public void OnLand()
+		{
+			var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
+			
+			if (ImprovedFeedbackConfigClient.Instance.enableSounds)
+			{
+				if (!ifp.itemStepRubberFlipflop && !ifp.itemStepLeatherBootLight && !ifp.itemStepLeatherBootMedium && !ifp.itemStepLeatherBootHeavy)
+				{
+					SoundEngine.PlaySound(Sounds.Player.Step, Player.position);
+					SoundEngine.PlaySound(Sounds.Player.Step, Player.position);
+				}
+				else
+				{
+					if (ifp.itemStepRubberFlipflop)
+					{
+						SoundEngine.PlaySound(Sounds.Player.StepRubberFlipflop, Player.position);
+						SoundEngine.PlaySound(Sounds.Player.StepRubberFlipflop, Player.position);
+					}
+					if (ifp.itemStepLeatherBootLight)
+					{
+						SoundEngine.PlaySound(Sounds.Player.LandLeatherBootLight, Player.position);
+					}
+					if (ifp.itemStepLeatherBootMedium)
+					{
+						SoundEngine.PlaySound(Sounds.Player.LandLeatherBootMedium, Player.position);
+					}
+					if (ifp.itemStepLeatherBootHeavy)
+					{
+						SoundEngine.PlaySound(Sounds.Player.LandLeatherBootHeavy, Player.position);
+						SoundEngine.PlaySound(Sounds.Player.LandLeatherBootHeavy, Player.position);
+					}
+				}
+				if (ifp.itemRustleClothLight)
+				{
+					SoundEngine.PlaySound(Sounds.Player.RustleClothLight, Player.position);
+					SoundEngine.PlaySound(Sounds.Player.RustleClothLight, Player.position);
+				}
+				if (ifp.itemRustleClothMedium)
+				{
+					SoundEngine.PlaySound(Sounds.Player.RustleClothMedium, Player.position);
+					SoundEngine.PlaySound(Sounds.Player.RustleClothMedium, Player.position);
+				}
+				if (ifp.itemRustleClothHeavy)
+				{
+					SoundEngine.PlaySound(Sounds.Player.RustleClothHeavy, Player.position);
+					SoundEngine.PlaySound(Sounds.Player.RustleClothHeavy, Player.position);
+				}
+				if (ifp.itemRustleRattleLight)
+				{
+					SoundEngine.PlaySound(Sounds.Player.RustleRattleLight, Player.position);
+					SoundEngine.PlaySound(Sounds.Player.RustleRattleLight, Player.position);
+				}
+				if (ifp.itemRustleRattleHeavy)
+				{
+					SoundEngine.PlaySound(Sounds.Player.RustleRattleHeavy, Player.position);
+					SoundEngine.PlaySound(Sounds.Player.RustleRattleHeavy, Player.position);
+				}
+				if (ifp.itemRustleAramidHeavy)
+				{
+					SoundEngine.PlaySound(Sounds.Player.RustleAramidHeavy, Player.position);
+					SoundEngine.PlaySound(Sounds.Player.RustleAramidHeavy, Player.position);
+				}
+			}
+			if (ImprovedFeedbackConfigClient.Instance.enableScreenshake)
+			{
+				screenShakeTimerVeryWeak = 10;
 			}
 		}
 		
