@@ -106,6 +106,7 @@ namespace ImprovedFeedback
 					if (!jumping)
 					{
 						jumping = true;
+						OnJump();
 					}
 				}
 				else
