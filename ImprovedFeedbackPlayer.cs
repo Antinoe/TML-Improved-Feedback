@@ -27,10 +27,10 @@ namespace ImprovedFeedback
 		public bool itemRustleRattleLight;
 		public bool itemRustleRattleHeavy;
 		public bool itemRustleAramidHeavy;
-		public bool itemStepRubberFlipflop;
-		public bool itemStepLeatherBootLight;
-		public bool itemStepLeatherBootMedium;
-		public bool itemStepLeatherBootHeavy;
+		public bool itemStepSandalGTA5;
+		public bool itemStepBootGTA5;
+		public bool itemStepPraetorSuitDOOM2016;
+		public bool itemStepMjolnirArmorHalo5;
 		public int screenShakeTimerVeryWeak;
 		public int screenShakeTimerWeak;
 		public int screenShakeTimerModerate;
@@ -44,10 +44,10 @@ namespace ImprovedFeedback
 			itemRustleRattleLight = false;
 			itemRustleRattleHeavy = false;
 			itemRustleAramidHeavy = false;
-			itemStepRubberFlipflop = false;
-			itemStepLeatherBootLight = false;
-			itemStepLeatherBootMedium = false;
-			itemStepLeatherBootHeavy = false;
+			itemStepSandalGTA5 = false;
+			itemStepBootGTA5 = false;
+			itemStepPraetorSuitDOOM2016 = false;
+			itemStepMjolnirArmorHalo5 = false;
         }
 		
 		public override void PostUpdateMiscEffects()
@@ -145,27 +145,27 @@ namespace ImprovedFeedback
 			if (ImprovedFeedbackConfigClient.Instance.enableSounds)
 			{
 				//I'm well aware of how unoptimized this file is. I'll fix it soon.
-				if (!ifp.itemStepRubberFlipflop && !ifp.itemStepLeatherBootLight && !ifp.itemStepLeatherBootMedium && !ifp.itemStepLeatherBootHeavy)
+				if (!ifp.itemStepSandalGTA5 && !ifp.itemStepBootGTA5 && !ifp.itemStepPraetorSuitDOOM2016 && !ifp.itemStepMjolnirArmorHalo5)
 				{
 					SoundEngine.PlaySound(Sounds.Player.Step, Player.position);
 				}
 				else
 				{
-					if (ifp.itemStepRubberFlipflop)
+					if (ifp.itemStepSandalGTA5)
 					{
-						SoundEngine.PlaySound(Sounds.Player.StepRubberFlipflop, Player.position);
+						SoundEngine.PlaySound(Sounds.Player.StepSandalGTA5, Player.position);
 					}
-					if (ifp.itemStepLeatherBootLight)
+					if (ifp.itemStepBootGTA5)
 					{
-						SoundEngine.PlaySound(Sounds.Player.StepLeatherBootLight, Player.position);
+						SoundEngine.PlaySound(Sounds.Player.StepBootGTA5, Player.position);
 					}
-					if (ifp.itemStepLeatherBootMedium)
+					if (ifp.itemStepPraetorSuitDOOM2016)
 					{
-						SoundEngine.PlaySound(Sounds.Player.StepLeatherBootMedium, Player.position);
+						SoundEngine.PlaySound(Sounds.Player.StepPraetorSuitDOOM2016, Player.position);
 					}
-					if (ifp.itemStepLeatherBootHeavy)
+					if (ifp.itemStepMjolnirArmorHalo5)
 					{
-						SoundEngine.PlaySound(Sounds.Player.StepLeatherBootHeavy, Player.position);
+						SoundEngine.PlaySound(Sounds.Player.StepMjolnirArmorHalo5, Player.position);
 					}
 				}
 				if (ifp.itemRustleClothLight)
@@ -200,7 +200,7 @@ namespace ImprovedFeedback
 			
 			if (ImprovedFeedbackConfigClient.Instance.enableSounds)
 			{
-				if (!ifp.itemStepRubberFlipflop && !ifp.itemStepLeatherBootLight && !ifp.itemStepLeatherBootMedium && !ifp.itemStepLeatherBootHeavy)
+				if (!ifp.itemStepSandalGTA5 && !ifp.itemStepBootGTA5 && !ifp.itemStepPraetorSuitDOOM2016 && !ifp.itemStepMjolnirArmorHalo5)
 				{
 					SoundEngine.PlaySound(Sounds.Player.Step, Player.position);
 				}
@@ -216,27 +216,27 @@ namespace ImprovedFeedback
 			
 			if (ImprovedFeedbackConfigClient.Instance.enableSounds)
 			{
-				if (!ifp.itemStepRubberFlipflop && !ifp.itemStepLeatherBootLight && !ifp.itemStepLeatherBootMedium && !ifp.itemStepLeatherBootHeavy)
+				if (!ifp.itemStepSandalGTA5 && !ifp.itemStepBootGTA5 && !ifp.itemStepPraetorSuitDOOM2016 && !ifp.itemStepMjolnirArmorHalo5)
 				{
 					SoundEngine.PlaySound(Sounds.Player.Step, Player.position);
 				}
 				else
 				{
-					if (ifp.itemStepRubberFlipflop)
+					if (ifp.itemStepSandalGTA5)
 					{
-						SoundEngine.PlaySound(Sounds.Player.StepRubberFlipflop, Player.position);
+						SoundEngine.PlaySound(Sounds.Player.StepSandalGTA5, Player.position);
 					}
-					if (ifp.itemStepLeatherBootLight)
+					if (ifp.itemStepBootGTA5)
 					{
-						SoundEngine.PlaySound(Sounds.Player.LandLeatherBootLight, Player.position);
+						SoundEngine.PlaySound(Sounds.Player.LandBootGTA5, Player.position);
 					}
-					if (ifp.itemStepLeatherBootMedium)
+					if (ifp.itemStepPraetorSuitDOOM2016)
 					{
-						SoundEngine.PlaySound(Sounds.Player.JumpLeatherBootMedium, Player.position);
+						SoundEngine.PlaySound(Sounds.Player.JumpPraetorSuitDOOM2016, Player.position);
 					}
-					if (ifp.itemStepLeatherBootHeavy)
+					if (ifp.itemStepMjolnirArmorHalo5)
 					{
-						SoundEngine.PlaySound(Sounds.Player.LandLeatherBootHeavy, Player.position);
+						SoundEngine.PlaySound(Sounds.Player.LandMjolnirArmorHalo5, Player.position);
 					}
 				}
 				if (ifp.itemRustleClothLight)
@@ -280,30 +280,30 @@ namespace ImprovedFeedback
 			
 			if (ImprovedFeedbackConfigClient.Instance.enableSounds)
 			{
-				if (!ifp.itemStepRubberFlipflop && !ifp.itemStepLeatherBootLight && !ifp.itemStepLeatherBootMedium && !ifp.itemStepLeatherBootHeavy)
+				if (!ifp.itemStepSandalGTA5 && !ifp.itemStepBootGTA5 && !ifp.itemStepPraetorSuitDOOM2016 && !ifp.itemStepMjolnirArmorHalo5)
 				{
 					SoundEngine.PlaySound(Sounds.Player.Step, Player.position);
 					SoundEngine.PlaySound(Sounds.Player.Step, Player.position);
 				}
 				else
 				{
-					if (ifp.itemStepRubberFlipflop)
+					if (ifp.itemStepSandalGTA5)
 					{
-						SoundEngine.PlaySound(Sounds.Player.StepRubberFlipflop, Player.position);
-						SoundEngine.PlaySound(Sounds.Player.StepRubberFlipflop, Player.position);
+						SoundEngine.PlaySound(Sounds.Player.StepSandalGTA5, Player.position);
+						SoundEngine.PlaySound(Sounds.Player.StepSandalGTA5, Player.position);
 					}
-					if (ifp.itemStepLeatherBootLight)
+					if (ifp.itemStepBootGTA5)
 					{
-						SoundEngine.PlaySound(Sounds.Player.LandLeatherBootLight, Player.position);
+						SoundEngine.PlaySound(Sounds.Player.LandBootGTA5, Player.position);
 					}
-					if (ifp.itemStepLeatherBootMedium)
+					if (ifp.itemStepPraetorSuitDOOM2016)
 					{
-						SoundEngine.PlaySound(Sounds.Player.LandLeatherBootMedium, Player.position);
+						SoundEngine.PlaySound(Sounds.Player.LandPraetorSuitDOOM2016, Player.position);
 					}
-					if (ifp.itemStepLeatherBootHeavy)
+					if (ifp.itemStepMjolnirArmorHalo5)
 					{
-						SoundEngine.PlaySound(Sounds.Player.LandLeatherBootHeavy, Player.position);
-						SoundEngine.PlaySound(Sounds.Player.LandLeatherBootHeavy, Player.position);
+						SoundEngine.PlaySound(Sounds.Player.LandMjolnirArmorHalo5, Player.position);
+						SoundEngine.PlaySound(Sounds.Player.LandMjolnirArmorHalo5, Player.position);
 					}
 				}
 				if (ifp.itemRustleClothLight)

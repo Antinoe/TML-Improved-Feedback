@@ -18,49 +18,49 @@ namespace ImprovedFeedback
 				PitchVariance = 0.15f,
 				MaxInstances = 12
 			};
-			public static readonly SoundStyle StepRubberFlipflop = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Materials/StepRubberFlipflop", 2)
+			public static readonly SoundStyle StepSandalGTA5 = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Materials/Footwear/GTA5/SandalStep", 2)
 			{
 				Volume = 0.25f,
 				PitchVariance = 0.15f,
 				MaxInstances = 12
 			};
-			public static readonly SoundStyle StepLeatherBootLight = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Materials/StepLeatherBootLight", 5)
+			public static readonly SoundStyle StepBootGTA5 = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Materials/Footwear/GTA5/BootStep", 5)
 			{
 				Volume = 0.25f,
 				PitchVariance = 0.15f,
 				MaxInstances = 12
 			};
-			public static readonly SoundStyle StepLeatherBootMedium = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Materials/StepLeatherBootMedium", 12)
+			public static readonly SoundStyle StepPraetorSuitDOOM2016 = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Materials/Footwear/DOOM2016/PraetorSuitStep", 12)
 			{
 				Volume = 0.35f,
 				PitchVariance = 0.15f,
 				MaxInstances = 12
 			};
-			public static readonly SoundStyle StepLeatherBootHeavy = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Materials/StepLeatherBootHeavy", 5)
+			public static readonly SoundStyle StepMjolnirArmorHalo5 = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Materials/Footwear/Halo5/MjolnirArmorStep", 5)
 			{
 				Volume = 2.00f,
 				PitchVariance = 0.15f,
 				MaxInstances = 12
 			};
-			public static readonly SoundStyle JumpLeatherBootMedium = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Materials/JumpLeatherBootMedium", 4)
+			public static readonly SoundStyle JumpPraetorSuitDOOM2016 = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Materials/Footwear/DOOM2016/PraetorSuitJump", 4)
 			{
 				Volume = 0.35f,
 				PitchVariance = 0.15f,
 				MaxInstances = 12
 			};
-			public static readonly SoundStyle LandLeatherBootLight = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Materials/LandLeatherBootLight", 6)
+			public static readonly SoundStyle LandBootGTA5 = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Materials/Footwear/GTA5/BootLand", 6)
 			{
 				Volume = 0.35f,
 				PitchVariance = 0.15f,
 				MaxInstances = 12
 			};
-			public static readonly SoundStyle LandLeatherBootMedium = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Materials/LandLeatherBootMedium", 5)
+			public static readonly SoundStyle LandPraetorSuitDOOM2016 = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Materials/Footwear/DOOM2016/PraetorSuitLand", 5)
 			{
 				Volume = 0.35f,
 				PitchVariance = 0.15f,
 				MaxInstances = 12
 			};
-			public static readonly SoundStyle LandLeatherBootHeavy = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Materials/LandLeatherBootHeavy")
+			public static readonly SoundStyle LandMjolnirArmorHalo5 = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Materials/Footwear/Halo5/MjolnirArmorLand")
 			{
 				Volume = 1.00f,
 				PitchVariance = 0.15f,

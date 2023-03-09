@@ -50,21 +50,21 @@ namespace ImprovedFeedback
 			{
 				pep.itemRustleAramidHeavy = true;
 			}
-			if (ImprovedFeedbackConfigClient.Instance.itemStepRubberFlipflopWhitelist.Contains(new ItemDefinition(item.type)))
+			if (ImprovedFeedbackConfigClient.Instance.itemStepSandalGTA5Whitelist.Contains(new ItemDefinition(item.type)))
 			{
-				pep.itemStepRubberFlipflop = true;
+				pep.itemStepSandalGTA5 = true;
 			}
-			if (ImprovedFeedbackConfigClient.Instance.itemStepLeatherBootLightWhitelist.Contains(new ItemDefinition(item.type)))
+			if (ImprovedFeedbackConfigClient.Instance.itemStepBootGTA5Whitelist.Contains(new ItemDefinition(item.type)))
 			{
-				pep.itemStepLeatherBootLight = true;
+				pep.itemStepBootGTA5 = true;
 			}
-			if (ImprovedFeedbackConfigClient.Instance.itemStepLeatherBootMediumWhitelist.Contains(new ItemDefinition(item.type)))
+			if (ImprovedFeedbackConfigClient.Instance.itemStepPraetorSuitDOOM2016Whitelist.Contains(new ItemDefinition(item.type)))
 			{
-				pep.itemStepLeatherBootMedium = true;
+				pep.itemStepPraetorSuitDOOM2016 = true;
 			}
-			if (ImprovedFeedbackConfigClient.Instance.itemStepLeatherBootHeavyWhitelist.Contains(new ItemDefinition(item.type)))
+			if (ImprovedFeedbackConfigClient.Instance.itemStepMjolnirArmorHalo5Whitelist.Contains(new ItemDefinition(item.type)))
 			{
-				pep.itemStepLeatherBootHeavy = true;
+				pep.itemStepMjolnirArmorHalo5 = true;
 			}
 		}
     }
