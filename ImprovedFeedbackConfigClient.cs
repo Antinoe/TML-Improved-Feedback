@@ -40,13 +40,13 @@ namespace ImprovedFeedback
         [DefaultValue(true)]
         public bool enableDynamicDamageEffects {get; set;}
 		
-		[Label("[i:HermesBoots] Rubber Flip-Flop Step Whitelist")]
-		public List<ItemDefinition> itemStepRubberFlipflopWhitelist = new List<ItemDefinition>
+		[Label("[i:HermesBoots] GTA 5 Sandal Step Whitelist")]
+		public List<ItemDefinition> itemStepSandalGTA5Whitelist = new List<ItemDefinition>
 			{
 			};
 		
-		[Label("[i:HermesBoots] Light Leather Boot Step Whitelist")]
-		public List<ItemDefinition> itemStepLeatherBootLightWhitelist = new List<ItemDefinition>
+		[Label("[i:HermesBoots] GTA 5 Boot Step Whitelist")]
+		public List<ItemDefinition> itemStepBootGTA5Whitelist = new List<ItemDefinition>
 			{
 				new ItemDefinition(ItemID.HermesBoots),
 				new ItemDefinition(ItemID.WoodGreaves),
@@ -66,13 +66,13 @@ namespace ImprovedFeedback
 				new ItemDefinition(ItemID.PlatinumGreaves)
 			};
 		
-		[Label("[i:HermesBoots] Medium Leather Boot Step Whitelist")]
-		public List<ItemDefinition> itemStepLeatherBootMediumWhitelist = new List<ItemDefinition>
+		[Label("[i:HermesBoots] DOOM 2016 Praetor Suit Step Whitelist")]
+		public List<ItemDefinition> itemStepPraetorSuitDOOM2016Whitelist = new List<ItemDefinition>
 			{
 			};
 		
-		[Label("[i:HermesBoots] Heavy Leather Boot Step Whitelist")]
-		public List<ItemDefinition> itemStepLeatherBootHeavyWhitelist = new List<ItemDefinition>
+		[Label("[i:HermesBoots] Halo 5 Mjolnir Armor Step Whitelist")]
+		public List<ItemDefinition> itemStepMjolnirArmorHalo5Whitelist = new List<ItemDefinition>
 			{
 				//new ItemDefinition(ModContent.ItemType<PowerSuitGreaves>())
 			};
