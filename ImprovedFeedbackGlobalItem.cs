@@ -25,54 +25,54 @@ namespace ImprovedFeedback
 		//public override void UpdateAccessory(Item item, Player player, bool hideVisual)
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ImprovedFeedbackPlayer pep = player.GetModPlayer<ImprovedFeedbackPlayer>();
+			ImprovedFeedbackPlayer ifp = player.GetModPlayer<ImprovedFeedbackPlayer>();
 			if (ImprovedFeedbackConfigClient.Instance.itemRustleClothLightWhitelist.Contains(new ItemDefinition(item.type)))
 			{
-				pep.itemRustleClothLight = true;
+				ifp.itemRustleClothLight = true;
 			}
 			if (ImprovedFeedbackConfigClient.Instance.itemRustleClothMediumWhitelist.Contains(new ItemDefinition(item.type)))
 			{
-				pep.itemRustleClothMedium = true;
+				ifp.itemRustleClothMedium = true;
 			}
 			if (ImprovedFeedbackConfigClient.Instance.itemRustleClothHeavyWhitelist.Contains(new ItemDefinition(item.type)))
 			{
-				pep.itemRustleClothHeavy = true;
+				ifp.itemRustleClothHeavy = true;
 			}
 			if (ImprovedFeedbackConfigClient.Instance.itemRustleRattleLightWhitelist.Contains(new ItemDefinition(item.type)))
 			{
-				pep.itemRustleRattleLight = true;
+				ifp.itemRustleRattleLight = true;
 			}
 			if (ImprovedFeedbackConfigClient.Instance.itemRustleRattleHeavyWhitelist.Contains(new ItemDefinition(item.type)))
 			{
-				pep.itemRustleRattleHeavy = true;
+				ifp.itemRustleRattleHeavy = true;
 			}
 			if (ImprovedFeedbackConfigClient.Instance.itemRustleAramidHeavyWhitelist.Contains(new ItemDefinition(item.type)))
 			{
-				pep.itemRustleAramidHeavy = true;
+				ifp.itemRustleAramidHeavy = true;
 			}
 			if (ImprovedFeedbackConfigClient.Instance.itemStepSandalGTA5Whitelist.Contains(new ItemDefinition(item.type)))
 			{
-				pep.itemStepSandalGTA5 = true;
+				ifp.itemStepSandalGTA5 = true;
 			}
 			if (ImprovedFeedbackConfigClient.Instance.itemStepBootGTA5Whitelist.Contains(new ItemDefinition(item.type)))
 			{
-				pep.itemStepBootGTA5 = true;
+				ifp.itemStepBootGTA5 = true;
 			}
 			if (ImprovedFeedbackConfigClient.Instance.itemStepPraetorSuitDOOM2016Whitelist.Contains(new ItemDefinition(item.type)))
 			{
-				pep.itemStepPraetorSuitDOOM2016 = true;
+				ifp.itemStepPraetorSuitDOOM2016 = true;
 			}
 			if (ImprovedFeedbackConfigClient.Instance.itemStepMjolnirArmorHalo5Whitelist.Contains(new ItemDefinition(item.type)))
 			{
-				pep.itemStepMjolnirArmorHalo5 = true;
+				ifp.itemStepMjolnirArmorHalo5 = true;
 			}
 			if (ImprovedFeedbackConfigClient.Instance.itemStepPowerSuitSuperMetroidWhitelist.Contains(new ItemDefinition(item.type)))
 			{
-				pep.itemStepPowerSuitSuperMetroid = true;
+				ifp.itemStepPowerSuitSuperMetroid = true;
 			}
 			if (ImprovedFeedbackConfigClient.Instance.itemStepFusionSuitMetroidFusionWhitelist.Contains(new ItemDefinition(item.type)))
 			{
-				pep.itemStepFusionSuitMetroidFusion = true;
+				ifp.itemStepFusionSuitMetroidFusion = true;
 			}
 		}
     }
