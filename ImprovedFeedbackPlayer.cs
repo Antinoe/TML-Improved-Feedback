@@ -33,6 +33,7 @@ namespace ImprovedFeedback
 		public bool itemStepFusionSuitMetroidFusion;
 		public bool itemStepPraetorSuitDOOM2016;
 		public bool itemStepMjolnirArmorHalo5;
+		public bool hasFootwear;
 		public int screenShakeTimerVeryWeak;
 		public int screenShakeTimerWeak;
 		public int screenShakeTimerModerate;
@@ -52,12 +53,14 @@ namespace ImprovedFeedback
 			itemStepFusionSuitMetroidFusion = false;
 			itemStepPraetorSuitDOOM2016 = false;
 			itemStepMjolnirArmorHalo5 = false;
+			hasFootwear = false;
         }
 		
 		public override void PostUpdateMiscEffects()
 		{
 			//var Player = Main.LocalPlayer;
 			var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
+			hasFootwear = (itemStepSandalGTA5 || itemStepBootGTA5 || itemStepPowerSuitSuperMetroid || itemStepFusionSuitMetroidFusion || itemStepPraetorSuitDOOM2016 || itemStepMjolnirArmorHalo5);
 			
 			if (screenShakeTimerVeryWeak > 0)
 			{
@@ -149,7 +152,7 @@ namespace ImprovedFeedback
 			if (ImprovedFeedbackConfigClient.Instance.enableSounds)
 			{
 				//I'm well aware of how unoptimized this file is. I'll fix it soon.
-				if (!ifp.itemStepSandalGTA5 && !ifp.itemStepBootGTA5 && !ifp.itemStepPowerSuitSuperMetroid && !ifp.itemStepFusionSuitMetroidFusion && !ifp.itemStepPraetorSuitDOOM2016 && !ifp.itemStepMjolnirArmorHalo5)
+				if (!ifp.hasFootwear)
 				{
 					SoundEngine.PlaySound(Sounds.Player.Step, Player.position);
 				}
@@ -212,7 +215,7 @@ namespace ImprovedFeedback
 			
 			if (ImprovedFeedbackConfigClient.Instance.enableSounds)
 			{
-				if (!ifp.itemStepSandalGTA5 && !ifp.itemStepBootGTA5 && !ifp.itemStepPowerSuitSuperMetroid && !ifp.itemStepFusionSuitMetroidFusion && !ifp.itemStepPraetorSuitDOOM2016 && !ifp.itemStepMjolnirArmorHalo5)
+				if (!ifp.hasFootwear)
 				{
 					SoundEngine.PlaySound(Sounds.Player.Step, Player.position);
 				}
@@ -228,7 +231,7 @@ namespace ImprovedFeedback
 			
 			if (ImprovedFeedbackConfigClient.Instance.enableSounds)
 			{
-				if (!ifp.itemStepSandalGTA5 && !ifp.itemStepBootGTA5 && !ifp.itemStepPowerSuitSuperMetroid && !ifp.itemStepFusionSuitMetroidFusion && !ifp.itemStepPraetorSuitDOOM2016 && !ifp.itemStepMjolnirArmorHalo5)
+				if (!ifp.hasFootwear)
 				{
 					SoundEngine.PlaySound(Sounds.Player.Step, Player.position);
 				}
@@ -296,7 +299,7 @@ namespace ImprovedFeedback
 			
 			if (ImprovedFeedbackConfigClient.Instance.enableSounds)
 			{
-				if (!ifp.itemStepSandalGTA5 && !ifp.itemStepBootGTA5 && !ifp.itemStepPowerSuitSuperMetroid && !ifp.itemStepFusionSuitMetroidFusion && !ifp.itemStepPraetorSuitDOOM2016 && !ifp.itemStepMjolnirArmorHalo5)
+				if (!ifp.hasFootwear)
 				{
 					SoundEngine.PlaySound(Sounds.Player.Step, Player.position);
 					SoundEngine.PlaySound(Sounds.Player.Step, Player.position);
