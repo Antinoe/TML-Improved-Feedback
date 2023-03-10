@@ -66,6 +66,16 @@ namespace ImprovedFeedback
 				new ItemDefinition(ItemID.PlatinumGreaves)
 			};
 		
+		[Label("[i:HermesBoots] Super Metroid Power Suit Step Whitelist")]
+		public List<ItemDefinition> itemStepPowerSuitSuperMetroidWhitelist = new List<ItemDefinition>
+			{
+			};
+		
+		[Label("[i:HermesBoots] Metroid Fusion Fusion Suit Step Whitelist")]
+		public List<ItemDefinition> itemStepFusionSuitMetroidFusionWhitelist = new List<ItemDefinition>
+			{
+			};
+		
 		[Label("[i:HermesBoots] DOOM 2016 Praetor Suit Step Whitelist")]
 		public List<ItemDefinition> itemStepPraetorSuitDOOM2016Whitelist = new List<ItemDefinition>
 			{

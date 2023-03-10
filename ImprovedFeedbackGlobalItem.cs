@@ -66,6 +66,14 @@ namespace ImprovedFeedback
 			{
 				pep.itemStepMjolnirArmorHalo5 = true;
 			}
+			if (ImprovedFeedbackConfigClient.Instance.itemStepPowerSuitSuperMetroidWhitelist.Contains(new ItemDefinition(item.type)))
+			{
+				pep.itemStepPowerSuitSuperMetroid = true;
+			}
+			if (ImprovedFeedbackConfigClient.Instance.itemStepFusionSuitMetroidFusionWhitelist.Contains(new ItemDefinition(item.type)))
+			{
+				pep.itemStepFusionSuitMetroidFusion = true;
+			}
 		}
     }
 }

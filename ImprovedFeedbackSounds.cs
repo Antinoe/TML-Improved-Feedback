@@ -30,6 +30,18 @@ namespace ImprovedFeedback
 				PitchVariance = 0.15f,
 				MaxInstances = 12
 			};
+			public static readonly SoundStyle StepPowerSuitSuperMetroid = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Materials/Footwear/SuperMetroid/PowerSuitStep")
+			{
+				Volume = 0.35f,
+				PitchVariance = 0.15f,
+				MaxInstances = 12
+			};
+			public static readonly SoundStyle StepFusionSuitMetroidFusion = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Materials/Footwear/MetroidFusion/FusionSuitStep1")
+			{
+				Volume = 0.35f,
+				PitchVariance = 0.15f,
+				MaxInstances = 12
+			};
 			public static readonly SoundStyle StepPraetorSuitDOOM2016 = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Materials/Footwear/DOOM2016/PraetorSuitStep", 12)
 			{
 				Volume = 0.35f,
@@ -42,6 +54,12 @@ namespace ImprovedFeedback
 				PitchVariance = 0.15f,
 				MaxInstances = 12
 			};
+			public static readonly SoundStyle JumpFusionSuitMetroidFusion = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Materials/Footwear/MetroidFusion/FusionSuitJump")
+			{
+				Volume = 0.35f,
+				PitchVariance = 0.15f,
+				MaxInstances = 12
+			};
 			public static readonly SoundStyle JumpPraetorSuitDOOM2016 = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Materials/Footwear/DOOM2016/PraetorSuitJump", 4)
 			{
 				Volume = 0.35f,
@@ -49,6 +67,18 @@ namespace ImprovedFeedback
 				MaxInstances = 12
 			};
 			public static readonly SoundStyle LandBootGTA5 = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Materials/Footwear/GTA5/BootLand", 6)
+			{
+				Volume = 0.35f,
+				PitchVariance = 0.15f,
+				MaxInstances = 12
+			};
+			public static readonly SoundStyle LandPowerSuitSuperMetroid = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Materials/Footwear/SuperMetroid/PowerSuitLand")
+			{
+				Volume = 0.35f,
+				PitchVariance = 0.15f,
+				MaxInstances = 12
+			};
+			public static readonly SoundStyle LandFusionSuitMetroidFusion = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Materials/Footwear/MetroidFusion/FusionSuitLand")
 			{
 				Volume = 0.35f,
 				PitchVariance = 0.15f,
