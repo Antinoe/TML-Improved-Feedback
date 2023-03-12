@@ -38,13 +38,13 @@ namespace ImprovedFeedback
 			{
 				ifp.itemRustleClothHeavy = true;
 			}
-			if (ImprovedFeedbackConfigClient.Instance.itemRustleRattleLightWhitelist.Contains(new ItemDefinition(item.type)))
+			if (ImprovedFeedbackConfigClient.Instance.itemRattleLightWhitelist.Contains(new ItemDefinition(item.type)))
 			{
-				ifp.itemRustleRattleLight = true;
+				ifp.itemRattleLight = true;
 			}
-			if (ImprovedFeedbackConfigClient.Instance.itemRustleRattleHeavyWhitelist.Contains(new ItemDefinition(item.type)))
+			if (ImprovedFeedbackConfigClient.Instance.itemRattleHeavyWhitelist.Contains(new ItemDefinition(item.type)))
 			{
-				ifp.itemRustleRattleHeavy = true;
+				ifp.itemRattleHeavy = true;
 			}
 			if (ImprovedFeedbackConfigClient.Instance.itemRustleAramidHeavyWhitelist.Contains(new ItemDefinition(item.type)))
 			{

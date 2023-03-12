@@ -132,8 +132,8 @@ namespace ImprovedFeedback
 				new ItemDefinition(ItemID.PlatinumGreaves)
 			};
 		
-		[Label("[i:Chain] Light Rattle Rustle Whitelist")]
-		public List<ItemDefinition> itemRustleRattleLightWhitelist = new List<ItemDefinition>
+		[Label("[i:Chain] Light Rattle Whitelist")]
+		public List<ItemDefinition> itemRattleLightWhitelist = new List<ItemDefinition>
 			{
 				new ItemDefinition(ItemID.CopperChainmail),
 				new ItemDefinition(ItemID.CopperGreaves),
@@ -145,8 +145,8 @@ namespace ImprovedFeedback
 				new ItemDefinition(ItemID.LeadGreaves)
 			};
 		
-		[Label("[i:IronBar] Heavy Rattle Rustle Whitelist")]
-		public List<ItemDefinition> itemRustleRattleHeavyWhitelist = new List<ItemDefinition>
+		[Label("[i:IronBar] Heavy Rattle Whitelist")]
+		public List<ItemDefinition> itemRattleHeavyWhitelist = new List<ItemDefinition>
 			{
 				new ItemDefinition(ItemID.SilverChainmail),
 				new ItemDefinition(ItemID.SilverGreaves),
