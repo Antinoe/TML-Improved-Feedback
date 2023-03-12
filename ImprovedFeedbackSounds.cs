@@ -114,13 +114,13 @@ namespace ImprovedFeedback
 				PitchVariance = 0.15f,
 				MaxInstances = 12
 			};
-			public static readonly SoundStyle RustleRattleLight = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Materials/RustleRattleLight", 6)
+			public static readonly SoundStyle RattleLight = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Materials/RattleLight", 6)
 			{
 				Volume = 0.15f,
 				PitchVariance = 0.15f,
 				MaxInstances = 12
 			};
-			public static readonly SoundStyle RustleRattleHeavy = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Materials/RustleRattleHeavy", 5)
+			public static readonly SoundStyle RattleHeavy = new($"{nameof(ImprovedFeedback)}/Assets/Sounds/Materials/RattleHeavy", 5)
 			{
 				Volume = 0.25f,
 				PitchVariance = 0.15f,

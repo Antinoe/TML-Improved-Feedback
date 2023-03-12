@@ -24,8 +24,8 @@ namespace ImprovedFeedback
 		public bool itemRustleClothLight;
 		public bool itemRustleClothMedium;
 		public bool itemRustleClothHeavy;
-		public bool itemRustleRattleLight;
-		public bool itemRustleRattleHeavy;
+		public bool itemRattleLight;
+		public bool itemRattleHeavy;
 		public bool itemRustleAramidHeavy;
 		public bool itemStepSandalGTA5;
 		public bool itemStepBootGTA5;
@@ -44,8 +44,8 @@ namespace ImprovedFeedback
 			itemRustleClothLight = false;
 			itemRustleClothMedium = false;
 			itemRustleClothHeavy = false;
-			itemRustleRattleLight = false;
-			itemRustleRattleHeavy = false;
+			itemRattleLight = false;
+			itemRattleHeavy = false;
 			itemRustleAramidHeavy = false;
 			itemStepSandalGTA5 = false;
 			itemStepBootGTA5 = false;
@@ -195,13 +195,13 @@ namespace ImprovedFeedback
 				{
 					SoundEngine.PlaySound(Sounds.Player.RustleClothHeavy, Player.position);
 				}
-				if (ifp.itemRustleRattleLight)
+				if (ifp.itemRattleLight)
 				{
-					SoundEngine.PlaySound(Sounds.Player.RustleRattleLight, Player.position);
+					SoundEngine.PlaySound(Sounds.Player.RattleLight, Player.position);
 				}
-				if (ifp.itemRustleRattleHeavy)
+				if (ifp.itemRattleHeavy)
 				{
-					SoundEngine.PlaySound(Sounds.Player.RustleRattleHeavy, Player.position);
+					SoundEngine.PlaySound(Sounds.Player.RattleHeavy, Player.position);
 				}
 				if (ifp.itemRustleAramidHeavy)
 				{
@@ -270,13 +270,13 @@ namespace ImprovedFeedback
 				{
 					SoundEngine.PlaySound(Sounds.Player.RustleClothHeavy, Player.position);
 				}
-				if (ifp.itemRustleRattleLight)
+				if (ifp.itemRattleLight)
 				{
-					SoundEngine.PlaySound(Sounds.Player.RustleRattleLight, Player.position);
+					SoundEngine.PlaySound(Sounds.Player.RattleLight, Player.position);
 				}
-				if (ifp.itemRustleRattleHeavy)
+				if (ifp.itemRattleHeavy)
 				{
-					SoundEngine.PlaySound(Sounds.Player.RustleRattleHeavy, Player.position);
+					SoundEngine.PlaySound(Sounds.Player.RattleHeavy, Player.position);
 				}
 				if (ifp.itemRustleAramidHeavy)
 				{
@@ -348,15 +348,15 @@ namespace ImprovedFeedback
 					SoundEngine.PlaySound(Sounds.Player.RustleClothHeavy, Player.position);
 					SoundEngine.PlaySound(Sounds.Player.RustleClothHeavy, Player.position);
 				}
-				if (ifp.itemRustleRattleLight)
+				if (ifp.itemRattleLight)
 				{
-					SoundEngine.PlaySound(Sounds.Player.RustleRattleLight, Player.position);
-					SoundEngine.PlaySound(Sounds.Player.RustleRattleLight, Player.position);
+					SoundEngine.PlaySound(Sounds.Player.RattleLight, Player.position);
+					SoundEngine.PlaySound(Sounds.Player.RattleLight, Player.position);
 				}
-				if (ifp.itemRustleRattleHeavy)
+				if (ifp.itemRattleHeavy)
 				{
-					SoundEngine.PlaySound(Sounds.Player.RustleRattleHeavy, Player.position);
-					SoundEngine.PlaySound(Sounds.Player.RustleRattleHeavy, Player.position);
+					SoundEngine.PlaySound(Sounds.Player.RattleHeavy, Player.position);
+					SoundEngine.PlaySound(Sounds.Player.RattleHeavy, Player.position);
 				}
 				if (ifp.itemRustleAramidHeavy)
 				{
