@@ -19,21 +19,41 @@ namespace ImprovedFeedback
 	[Header("[i:Nazar] Visual")]
 		
         [Label("[i:StoneBlock] Enable Screenshake")]
-        [Tooltip("If false, the effects of this mod will not produce Screenshake.\n[Default: On]")]
+        [Tooltip("If true, the effects of this mod will produce Screenshake.\n[Default: On]")]
         [DefaultValue(true)]
         public bool enableScreenshake {get; set;}
+		
+        [Label("[i:StoneBlock] Enable Falling Effect")]
+        [Tooltip("If true, the screen will shake when falling great distances.\n[Default: On]")]
+        [DefaultValue(true)]
+        public bool enableFallingEffect {get; set;}
 		
 	[Header("[i:Megaphone] Audio")]
 		
         [Label("[i:Megaphone] Enable Sounds")]
-        [Tooltip("If false, the sounds of this mod will not be played.\n[Default: On]")]
+        [Tooltip("If true, the sounds of this mod will be played.\n[Default: On]")]
         [DefaultValue(true)]
         public bool enableSounds {get; set;}
 		
-        [Label("[i:Megaphone] Vanilla Sounds")]
-        [Tooltip("If false, this mod's custom sounds will be played instead of Vanilla variations.\n[Default: Off]")]
-        [DefaultValue(false)]
-        public bool enableVanillaSounds {get; set;}
+        [Label("[i:Megaphone][i:HermesBoots] Enable Step Sounds")]
+        [Tooltip("If true, a sound will be played each time a player takes a step, depending on the materials worn.\n[Default: On]")]
+        [DefaultValue(true)]
+        public bool enableStepSounds {get; set;}
+		
+        [Label("[i:Megaphone][i:LuckyHorseshoe] Enable Skid Sound")]
+        [Tooltip("If true, a sound will be played each time a player comes to a stop.\n[Default: On]")]
+        [DefaultValue(true)]
+        public bool enableSkidSounds {get; set;}
+		
+        [Label("[i:Megaphone][i:CloudinaBottle] Enable Jump Sounds")]
+        [Tooltip("If true, a sound will be played each time a player jumps.\n[Default: On]")]
+        [DefaultValue(true)]
+        public bool enableJumpSounds {get; set;}
+		
+        [Label("[i:Megaphone][i:LuckyHorseshoe] Enable Land Sounds")]
+        [Tooltip("If true, a sound will be played each time a player lands.\n[Default: On]")]
+        [DefaultValue(true)]
+        public bool enableLandSounds {get; set;}
 		
         [Label("[i:Bone] Enable Dynamic Damage Effects")]
         [Tooltip("If true, the Player Hurt sound will depend on certain conditions. (Attire, Damage dealt, etc.)\n[Default: On]")]

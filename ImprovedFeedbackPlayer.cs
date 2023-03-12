@@ -149,7 +149,7 @@ namespace ImprovedFeedback
 		{
 			var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
 			
-			if (ImprovedFeedbackConfigClient.Instance.enableSounds)
+			if (ImprovedFeedbackConfigClient.Instance.enableSounds && ImprovedFeedbackConfigClient.Instance.enableStepSounds)
 			{
 				//I'm well aware of how unoptimized this file is. I'll fix it soon.
 				if (!ifp.hasFootwear)
@@ -213,7 +213,7 @@ namespace ImprovedFeedback
 		{
 			var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
 			
-			if (ImprovedFeedbackConfigClient.Instance.enableSounds)
+			if (ImprovedFeedbackConfigClient.Instance.enableSounds && ImprovedFeedbackConfigClient.Instance.enableSkidSounds)
 			{
 				if (!ifp.hasFootwear)
 				{
@@ -229,7 +229,7 @@ namespace ImprovedFeedback
 		{
 			var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
 			
-			if (ImprovedFeedbackConfigClient.Instance.enableSounds)
+			if (ImprovedFeedbackConfigClient.Instance.enableSounds && ImprovedFeedbackConfigClient.Instance.enableJumpSounds)
 			{
 				if (!ifp.hasFootwear)
 				{
@@ -288,16 +288,19 @@ namespace ImprovedFeedback
 		{
 			var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
 			
-			if (ImprovedFeedbackConfigClient.Instance.enableScreenshake)
+			if (ImprovedFeedbackConfigClient.Instance.enableFallingEffect)
 			{
-				screenShakeTimerWeak = 5;
+				if (ImprovedFeedbackConfigClient.Instance.enableScreenshake)
+				{
+					screenShakeTimerWeak = 5;
+				}
 			}
 		}
 		public void OnLand()
 		{
 			var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
 			
-			if (ImprovedFeedbackConfigClient.Instance.enableSounds)
+			if (ImprovedFeedbackConfigClient.Instance.enableSounds && ImprovedFeedbackConfigClient.Instance.enableLandSounds)
 			{
 				if (!ifp.hasFootwear)
 				{
