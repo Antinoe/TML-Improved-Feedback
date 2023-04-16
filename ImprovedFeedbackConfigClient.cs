@@ -162,7 +162,8 @@ namespace ImprovedFeedback
 				new ItemDefinition(ItemID.IronChainmail),
 				new ItemDefinition(ItemID.IronGreaves),
 				new ItemDefinition(ItemID.LeadChainmail),
-				new ItemDefinition(ItemID.LeadGreaves)
+				new ItemDefinition(ItemID.LeadGreaves),
+				new ItemDefinition(ItemID.Shackle)
 			};
 		
 		[Label("[i:IronBar] Heavy Rattle Whitelist")]
