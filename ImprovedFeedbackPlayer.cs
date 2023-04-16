@@ -4,6 +4,7 @@ using Terraria;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.GameInput;
+using Terraria.Graphics.CameraModifiers;
 using System.Collections.Generic;
 using Terraria.DataStructures;
 using Terraria.Audio;
@@ -34,10 +35,6 @@ namespace ImprovedFeedback
 		public bool itemStepPraetorSuitDOOM2016;
 		public bool itemStepMjolnirArmorHalo5;
 		public bool hasFootwear;
-		public int screenShakeTimerVeryWeak;
-		public int screenShakeTimerWeak;
-		public int screenShakeTimerModerate;
-		public int screenShakeTimerStrong;
 		
         public override void ResetEffects()
         {
@@ -61,23 +58,6 @@ namespace ImprovedFeedback
 			//var Player = Main.LocalPlayer;
 			var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
 			hasFootwear = (itemStepSandalGTA5 || itemStepBootGTA5 || itemStepPowerSuitSuperMetroid || itemStepFusionSuitMetroidFusion || itemStepPraetorSuitDOOM2016 || itemStepMjolnirArmorHalo5);
-			
-			if (screenShakeTimerVeryWeak > 0)
-			{
-				screenShakeTimerVeryWeak--;
-			}
-			if (screenShakeTimerWeak > 0)
-			{
-				screenShakeTimerWeak--;
-			}
-			if (screenShakeTimerModerate > 0)
-			{
-				screenShakeTimerModerate--;
-			}
-			if (screenShakeTimerStrong > 0)
-			{
-				screenShakeTimerStrong--;
-			}
 			
 			/*if (Player.wet)
 			{
@@ -297,7 +277,8 @@ namespace ImprovedFeedback
 			{
 				if (ImprovedFeedbackConfigClient.Instance.enableScreenshake)
 				{
-					screenShakeTimerWeak = 5;
+					PunchCameraModifier modifier = new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 1f, 6f, 20, 1000f, FullName);
+					Main.instance.CameraModifiers.Add(modifier);
 				}
 			}
 		}
@@ -374,32 +355,9 @@ namespace ImprovedFeedback
 			}
 			if (ImprovedFeedbackConfigClient.Instance.enableScreenshake)
 			{
-				screenShakeTimerVeryWeak = 10;
+				PunchCameraModifier modifier = new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 1f, 10f, 10, 1000f, FullName);
+				Main.instance.CameraModifiers.Add(modifier);
 			}
-		}
-		
-		public override void ModifyScreenPosition()
-		{
-            if (screenShakeTimerVeryWeak > 0)
-            {
-				Main.screenPosition.X += (float)Math.Round(Main.rand.Next((int)(0f - 1), (int)1) * 1.10f);
-				Main.screenPosition.Y += (float)Math.Round(Main.rand.Next((int)(0f - 1), (int)1) * 1.10f);
-            }
-            if (screenShakeTimerWeak > 0)
-            {
-				Main.screenPosition.X += (float)Math.Round(Main.rand.Next((int)(0f - 1), (int)1) * 1.50f);
-				Main.screenPosition.Y += (float)Math.Round(Main.rand.Next((int)(0f - 1), (int)1) * 1.50f);
-            }
-            if (screenShakeTimerModerate > 0)
-            {
-				Main.screenPosition.X += (float)Math.Round(Main.rand.Next((int)(0f - 1), (int)1) * 2.00f);
-				Main.screenPosition.Y += (float)Math.Round(Main.rand.Next((int)(0f - 1), (int)1) * 2.00f);
-            }
-            if (screenShakeTimerStrong > 0)
-            {
-				Main.screenPosition.X += (float)Math.Round(Main.rand.Next((int)(0f - 1), (int)1) * 4.00f);
-				Main.screenPosition.Y += (float)Math.Round(Main.rand.Next((int)(0f - 1), (int)1) * 4.00f);
-            }
 		}
 		
 		public override bool PreHurt(bool pvp, bool quiet, ref int damage, ref int hitDirection, ref bool crit, ref bool customDamage, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource, ref int cooldownCounter)
@@ -418,19 +376,31 @@ namespace ImprovedFeedback
 				if (damage > 0 && damage < 5)
 				{
 					SoundEngine.PlaySound(Sounds.Player.HitWeak, Player.position);
-					if (ImprovedFeedbackConfigClient.Instance.enableScreenshake)	{screenShakeTimerWeak = 10;}
+					if (ImprovedFeedbackConfigClient.Instance.enableScreenshake)
+					{
+						PunchCameraModifier modifier = new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 5f, 5f, 30, 1000f, FullName);
+						Main.instance.CameraModifiers.Add(modifier);
+					}
 				}
 				//if (damage == (int)(Player.statLifeMax * 0.50))
 				if (damage >= 5 && damage < 15)
 				{
 					SoundEngine.PlaySound(Sounds.Player.HitModerate, Player.position);
-					if (ImprovedFeedbackConfigClient.Instance.enableScreenshake)	{screenShakeTimerModerate = 15;}
+					if (ImprovedFeedbackConfigClient.Instance.enableScreenshake)
+					{
+						PunchCameraModifier modifier = new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 10f, 5f, 60, 1000f, FullName);
+						Main.instance.CameraModifiers.Add(modifier);
+					}
 				}
 				//if (damage == (int)(Player.statLifeMax * 0.75))
 				if (damage >= 15)
 				{
 					SoundEngine.PlaySound(Sounds.Player.HitHard, Player.position);
-					if (ImprovedFeedbackConfigClient.Instance.enableScreenshake)	{screenShakeTimerStrong = 20;}
+					if (ImprovedFeedbackConfigClient.Instance.enableScreenshake)
+					{
+						PunchCameraModifier modifier = new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 15f, 5f, 120, 1000f, FullName);
+						Main.instance.CameraModifiers.Add(modifier);
+					}
 				}
 			}
 		}
