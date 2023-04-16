@@ -79,6 +79,11 @@ namespace ImprovedFeedback
 				screenShakeTimerStrong--;
 			}
 			
+			/*if (Player.wet)
+			{
+				Main.NewText("You are wet.");
+			}*/
+			
 			if (!Player.mount.Active)
 			{
 				//Stepping
