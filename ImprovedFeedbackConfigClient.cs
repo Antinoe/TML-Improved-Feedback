@@ -8,14 +8,13 @@ using Terraria.ModLoader.Config;
 
 namespace ImprovedFeedback
 {
-    [Label("Client Config")]
-    public class ImprovedFeedbackConfigClient : ModConfig
+    [Label("Basic")]
+    public class ImprovedFeedbackConfigClientBasic : ModConfig
     {
-        //This is here for the Config to work at all.
         public override ConfigScope Mode => ConfigScope.ClientSide;
 		
-        public static ImprovedFeedbackConfigClient Instance;
-		
+        public static ImprovedFeedbackConfigClientBasic Instance;
+
 	[Header("[i:Nazar] Visual")]
 		
         [Label("[i:StoneBlock] Enable Screenshake")]
@@ -59,6 +58,14 @@ namespace ImprovedFeedback
         [Tooltip("If true, the Player Hurt sound will depend on certain conditions. (Attire, Damage dealt, etc.)\n[Default: On]")]
         [DefaultValue(true)]
         public bool enableDynamicDamageEffects {get; set;}
+	}
+
+    [Label("Developer")]
+    public class ImprovedFeedbackConfigClientDeveloper : ModConfig
+    {
+        public override ConfigScope Mode => ConfigScope.ClientSide;
+		
+        public static ImprovedFeedbackConfigClientDeveloper Instance;
 		
 		[Label("[i:HermesBoots] GTA 5 Sandal Step Whitelist")]
 		public List<ItemDefinition> itemStepSandalGTA5Whitelist = new List<ItemDefinition>

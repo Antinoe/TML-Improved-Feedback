@@ -134,7 +134,7 @@ namespace ImprovedFeedback
 		{
 			var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
 			
-			if (ImprovedFeedbackConfigClient.Instance.enableSounds && ImprovedFeedbackConfigClient.Instance.enableStepSounds)
+			if (ImprovedFeedbackConfigClientBasic.Instance.enableSounds && ImprovedFeedbackConfigClientBasic.Instance.enableStepSounds)
 			{
 				//I'm well aware of how unoptimized this file is. I'll fix it soon.
 				if (!ifp.hasFootwear)
@@ -198,7 +198,7 @@ namespace ImprovedFeedback
 		{
 			var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
 			
-			if (ImprovedFeedbackConfigClient.Instance.enableSounds && ImprovedFeedbackConfigClient.Instance.enableSkidSounds)
+			if (ImprovedFeedbackConfigClientBasic.Instance.enableSounds && ImprovedFeedbackConfigClientBasic.Instance.enableSkidSounds)
 			{
 				if (!ifp.hasFootwear)
 				{
@@ -214,7 +214,7 @@ namespace ImprovedFeedback
 		{
 			var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
 			
-			if (ImprovedFeedbackConfigClient.Instance.enableSounds && ImprovedFeedbackConfigClient.Instance.enableJumpSounds)
+			if (ImprovedFeedbackConfigClientBasic.Instance.enableSounds && ImprovedFeedbackConfigClientBasic.Instance.enableJumpSounds)
 			{
 				if (!ifp.hasFootwear)
 				{
@@ -273,9 +273,9 @@ namespace ImprovedFeedback
 		{
 			var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
 			
-			if (ImprovedFeedbackConfigClient.Instance.enableFallingEffect)
+			if (ImprovedFeedbackConfigClientBasic.Instance.enableFallingEffect)
 			{
-				if (ImprovedFeedbackConfigClient.Instance.enableScreenshake)
+				if (ImprovedFeedbackConfigClientBasic.Instance.enableScreenshake)
 				{
 					PunchCameraModifier modifier = new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 1f, 6f, 20, 1000f, FullName);
 					Main.instance.CameraModifiers.Add(modifier);
@@ -286,7 +286,7 @@ namespace ImprovedFeedback
 		{
 			var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
 			
-			if (ImprovedFeedbackConfigClient.Instance.enableSounds && ImprovedFeedbackConfigClient.Instance.enableLandSounds)
+			if (ImprovedFeedbackConfigClientBasic.Instance.enableSounds && ImprovedFeedbackConfigClientBasic.Instance.enableLandSounds)
 			{
 				if (!ifp.hasFootwear)
 				{
@@ -353,7 +353,7 @@ namespace ImprovedFeedback
 					SoundEngine.PlaySound(Sounds.Player.RustleAramidHeavy, Player.position);
 				}
 			}
-			if (ImprovedFeedbackConfigClient.Instance.enableScreenshake)
+			if (ImprovedFeedbackConfigClientBasic.Instance.enableScreenshake)
 			{
 				PunchCameraModifier modifier = new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 1f, 10f, 10, 1000f, FullName);
 				Main.instance.CameraModifiers.Add(modifier);
@@ -362,7 +362,7 @@ namespace ImprovedFeedback
 		
 		public override bool PreHurt(bool pvp, bool quiet, ref int damage, ref int hitDirection, ref bool crit, ref bool customDamage, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource, ref int cooldownCounter)
 		{
-			if (ImprovedFeedbackConfigClient.Instance.enableDynamicDamageEffects)
+			if (ImprovedFeedbackConfigClientBasic.Instance.enableDynamicDamageEffects)
 			{
 				playSound = false;
 			}
@@ -370,13 +370,13 @@ namespace ImprovedFeedback
 		}
 		public override void PostHurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit, int cooldownCounter)
 		{
-			if (ImprovedFeedbackConfigClient.Instance.enableDynamicDamageEffects)
+			if (ImprovedFeedbackConfigClientBasic.Instance.enableDynamicDamageEffects)
 			{
 				//if (damage == (int)(Player.statLifeMax * 0.25))
 				if (damage > 0 && damage < 5)
 				{
 					SoundEngine.PlaySound(Sounds.Player.HitWeak, Player.position);
-					if (ImprovedFeedbackConfigClient.Instance.enableScreenshake)
+					if (ImprovedFeedbackConfigClientBasic.Instance.enableScreenshake)
 					{
 						PunchCameraModifier modifier = new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 5f, 5f, 30, 1000f, FullName);
 						Main.instance.CameraModifiers.Add(modifier);
@@ -386,7 +386,7 @@ namespace ImprovedFeedback
 				if (damage >= 5 && damage < 15)
 				{
 					SoundEngine.PlaySound(Sounds.Player.HitModerate, Player.position);
-					if (ImprovedFeedbackConfigClient.Instance.enableScreenshake)
+					if (ImprovedFeedbackConfigClientBasic.Instance.enableScreenshake)
 					{
 						PunchCameraModifier modifier = new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 10f, 5f, 60, 1000f, FullName);
 						Main.instance.CameraModifiers.Add(modifier);
@@ -396,7 +396,7 @@ namespace ImprovedFeedback
 				if (damage >= 15)
 				{
 					SoundEngine.PlaySound(Sounds.Player.HitHard, Player.position);
-					if (ImprovedFeedbackConfigClient.Instance.enableScreenshake)
+					if (ImprovedFeedbackConfigClientBasic.Instance.enableScreenshake)
 					{
 						PunchCameraModifier modifier = new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 15f, 5f, 120, 1000f, FullName);
 						Main.instance.CameraModifiers.Add(modifier);
