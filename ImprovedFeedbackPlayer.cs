@@ -67,7 +67,7 @@ namespace ImprovedFeedback
 			if (!Player.mount.Active)
 			{
 				//Stepping
-				if (Player.legFrame.Y == Player.legFrame.Height * 9 || Player.legFrame.Y == Player.legFrame.Height * 16)
+				if (Player.legFrame.Y == Player.legFrame.Height * ImprovedFeedbackConfigClientDeveloper.Instance.footStepLeft || Player.legFrame.Y == Player.legFrame.Height * ImprovedFeedbackConfigClientDeveloper.Instance.footStepRight)
 				{
 					if (!stepping)
 					{

@@ -195,13 +195,21 @@ namespace ImprovedFeedback
 				new ItemDefinition(ItemID.BeetleLeggings)
 			};
 		
-        /*[Label("[i:HermesBoots] Left Foot Step Frame")]
-        [Tooltip("[Default: 10]")]
+        [Label("[i:HermesBoots] Left Foot Step Frame")]
+        [Tooltip("[Default: 9]")]
         [Slider]
-        [DefaultValue(10)]
+        [DefaultValue(9)]
         [Range(0, 19)]
         [Increment(1)]
-        public int footStepLeft {get; set;}*/
+        public int footStepLeft {get; set;}
+		
+        [Label("[i:HermesBoots] Right Foot Step Frame")]
+        [Tooltip("[Default: 16]")]
+        [Slider]
+        [DefaultValue(16)]
+        [Range(0, 19)]
+        [Increment(1)]
+        public int footStepRight {get; set;}
 		
     }
 }
