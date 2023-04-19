@@ -27,6 +27,16 @@ namespace ImprovedFeedback
         [DefaultValue(true)]
         public bool enableFallingEffect {get; set;}
 		
+        [Label("[i:StoneBlock] Enable Landing Effect")]
+        [Tooltip("If true, the screen will shake when landing.\n[Default: On]")]
+        [DefaultValue(true)]
+        public bool enableLandingEffect {get; set;}
+		
+        [Label("[i:StoneBlock] Enable Damage Effect")]
+        [Tooltip("If true, the screen will shake depending on how much damage was dealt.\n[Default: On]")]
+        [DefaultValue(true)]
+        public bool enableDamageEffect {get; set;}
+		
 	[Header("[i:Megaphone] Audio")]
 		
         [Label("[i:Megaphone] Enable Sounds")]

@@ -353,10 +353,13 @@ namespace ImprovedFeedback
 					SoundEngine.PlaySound(Sounds.Player.RustleAramidHeavy, Player.position);
 				}
 			}
-			if (ImprovedFeedbackConfigClientBasic.Instance.enableScreenshake)
+			if (ImprovedFeedbackConfigClientBasic.Instance.enableLandingEffect)
 			{
-				PunchCameraModifier modifier = new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 1f, 10f, 10, 1000f, FullName);
-				Main.instance.CameraModifiers.Add(modifier);
+				if (ImprovedFeedbackConfigClientBasic.Instance.enableScreenshake)
+				{
+					PunchCameraModifier modifier = new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 1f, 10f, 10, 1000f, FullName);
+					Main.instance.CameraModifiers.Add(modifier);
+				}
 			}
 		}
 		
@@ -376,7 +379,7 @@ namespace ImprovedFeedback
 				if (damage > 0 && damage < 5)
 				{
 					SoundEngine.PlaySound(Sounds.Player.HitWeak, Player.position);
-					if (ImprovedFeedbackConfigClientBasic.Instance.enableScreenshake)
+					if (ImprovedFeedbackConfigClientBasic.Instance.enableDamageEffect && ImprovedFeedbackConfigClientBasic.Instance.enableScreenshake)
 					{
 						PunchCameraModifier modifier = new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 5f, 5f, 30, 1000f, FullName);
 						Main.instance.CameraModifiers.Add(modifier);
@@ -386,7 +389,7 @@ namespace ImprovedFeedback
 				if (damage >= 5 && damage < 15)
 				{
 					SoundEngine.PlaySound(Sounds.Player.HitModerate, Player.position);
-					if (ImprovedFeedbackConfigClientBasic.Instance.enableScreenshake)
+					if (ImprovedFeedbackConfigClientBasic.Instance.enableDamageEffect && ImprovedFeedbackConfigClientBasic.Instance.enableScreenshake)
 					{
 						PunchCameraModifier modifier = new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 10f, 5f, 60, 1000f, FullName);
 						Main.instance.CameraModifiers.Add(modifier);
@@ -396,7 +399,7 @@ namespace ImprovedFeedback
 				if (damage >= 15)
 				{
 					SoundEngine.PlaySound(Sounds.Player.HitHard, Player.position);
-					if (ImprovedFeedbackConfigClientBasic.Instance.enableScreenshake)
+					if (ImprovedFeedbackConfigClientBasic.Instance.enableDamageEffect && ImprovedFeedbackConfigClientBasic.Instance.enableScreenshake)
 					{
 						PunchCameraModifier modifier = new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 15f, 5f, 120, 1000f, FullName);
 						Main.instance.CameraModifiers.Add(modifier);
