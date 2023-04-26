@@ -56,7 +56,8 @@ namespace ImprovedFeedback
 		public override void PostUpdateMiscEffects()
 		{
 			//var Player = Main.LocalPlayer;
-			var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
+			//var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
+			var ifp = this;
 			hasFootwear = (itemStepSandalGTA5 || itemStepBootGTA5 || itemStepPowerSuitSuperMetroid || itemStepFusionSuitMetroidFusion || itemStepPraetorSuitDOOM2016 || itemStepMjolnirArmorHalo5);
 			
 			/*if (Player.wet)
@@ -132,7 +133,8 @@ namespace ImprovedFeedback
 		
 		public void OnStep()
 		{
-			var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
+			//var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
+			var ifp = this;
 			
 			if (ImprovedFeedbackConfigClientBasic.Instance.enableSounds && ImprovedFeedbackConfigClientBasic.Instance.enableStepSounds)
 			{
@@ -196,7 +198,8 @@ namespace ImprovedFeedback
 		}
 		public void OnSkid()
 		{
-			var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
+			//var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
+			var ifp = this;
 			
 			if (ImprovedFeedbackConfigClientBasic.Instance.enableSounds && ImprovedFeedbackConfigClientBasic.Instance.enableSkidSounds)
 			{
@@ -212,7 +215,8 @@ namespace ImprovedFeedback
 		}
 		public void OnJump()
 		{
-			var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
+			//var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
+			var ifp = this;
 			
 			if (ImprovedFeedbackConfigClientBasic.Instance.enableSounds && ImprovedFeedbackConfigClientBasic.Instance.enableJumpSounds)
 			{
@@ -271,7 +275,8 @@ namespace ImprovedFeedback
 		}
 		public void OnFalling()
 		{
-			var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
+			//var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
+			var ifp = this;
 			
 			if (ImprovedFeedbackConfigClientBasic.Instance.enableFallingEffect)
 			{
@@ -284,7 +289,8 @@ namespace ImprovedFeedback
 		}
 		public void OnLand()
 		{
-			var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
+			//var ifp = Main.LocalPlayer.GetModPlayer<ImprovedFeedbackPlayer>();
+			var ifp = this;
 			
 			if (ImprovedFeedbackConfigClientBasic.Instance.enableSounds && ImprovedFeedbackConfigClientBasic.Instance.enableLandSounds)
 			{
