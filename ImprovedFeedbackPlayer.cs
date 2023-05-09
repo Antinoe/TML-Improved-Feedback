@@ -1,17 +1,8 @@
-using System; //This is so Math functions can work.
 using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.GameInput;
 using Terraria.Graphics.CameraModifiers;
-using System.Collections.Generic;
-using Terraria.DataStructures;
 using Terraria.Audio;
-using Terraria.DataStructures;
-using Terraria.ID;
 using Terraria.ModLoader;
-using static Terraria.Mount;
 
 namespace ImprovedFeedback
 {
@@ -369,20 +360,16 @@ namespace ImprovedFeedback
 			}
 		}
 		
-		public override bool PreHurt(bool pvp, bool quiet, ref int damage, ref int hitDirection, ref bool crit, ref bool customDamage, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource, ref int cooldownCounter)
+		public override void OnHurt(Player.HurtInfo info)
 		{
 			if (ImprovedFeedbackConfigClientBasic.Instance.enableDynamicDamageEffects)
 			{
-				playSound = false;
+				info.SoundDisabled = true;
 			}
-			return true;
-		}
-		public override void PostHurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit, int cooldownCounter)
-		{
 			if (ImprovedFeedbackConfigClientBasic.Instance.enableDynamicDamageEffects)
 			{
-				//if (damage == (int)(Player.statLifeMax * 0.25))
-				if (damage > 0 && damage < 5)
+				//if (Damage == (int)(Player.statLifeMax * 0.25))
+				if (info.Damage > 0 && info.Damage < 5)
 				{
 					SoundEngine.PlaySound(Sounds.Player.HitWeak, Player.position);
 					if (ImprovedFeedbackConfigClientBasic.Instance.enableDamageEffect && ImprovedFeedbackConfigClientBasic.Instance.enableScreenshake)
@@ -391,8 +378,8 @@ namespace ImprovedFeedback
 						Main.instance.CameraModifiers.Add(modifier);
 					}
 				}
-				//if (damage == (int)(Player.statLifeMax * 0.50))
-				if (damage >= 5 && damage < 15)
+				//if (Damage == (int)(Player.statLifeMax * 0.50))
+				if (info.Damage >= 5 && info.Damage < 15)
 				{
 					SoundEngine.PlaySound(Sounds.Player.HitModerate, Player.position);
 					if (ImprovedFeedbackConfigClientBasic.Instance.enableDamageEffect && ImprovedFeedbackConfigClientBasic.Instance.enableScreenshake)
@@ -401,8 +388,8 @@ namespace ImprovedFeedback
 						Main.instance.CameraModifiers.Add(modifier);
 					}
 				}
-				//if (damage == (int)(Player.statLifeMax * 0.75))
-				if (damage >= 15)
+				//if (Damage == (int)(Player.statLifeMax * 0.75))
+				if (info.Damage >= 15)
 				{
 					SoundEngine.PlaySound(Sounds.Player.HitHard, Player.position);
 					if (ImprovedFeedbackConfigClientBasic.Instance.enableDamageEffect && ImprovedFeedbackConfigClientBasic.Instance.enableScreenshake)
