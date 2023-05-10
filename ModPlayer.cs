@@ -27,6 +27,10 @@ namespace ImprovedFeedback
 		public bool itemStepMjolnirArmorHalo5;
 		public bool hasFootwear;
 		
+		PunchCameraModifier shakeWeak = new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 1f, 5f, 20, 15f, "FullName");
+		PunchCameraModifier shakeModerate = new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 1f, 10f, 60, 15f, "FullName");
+		PunchCameraModifier shakeStrong = new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 1f, 20f, 120, 15f, "FullName");
+		
         public override void ResetEffects()
         {
 			itemRustleClothLight = false;
@@ -273,8 +277,7 @@ namespace ImprovedFeedback
 			{
 				if (ImprovedFeedbackConfigClientBasic.Instance.enableScreenshake)
 				{
-					PunchCameraModifier modifier = new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 1f, 6f, 20, 1000f, FullName);
-					Main.instance.CameraModifiers.Add(modifier);
+					Main.instance.CameraModifiers.Add(shakeWeak);
 				}
 			}
 		}
@@ -354,8 +357,10 @@ namespace ImprovedFeedback
 			{
 				if (ImprovedFeedbackConfigClientBasic.Instance.enableScreenshake)
 				{
-					PunchCameraModifier modifier = new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 1f, 10f, 10, 1000f, FullName);
-					Main.instance.CameraModifiers.Add(modifier);
+					PunchCameraModifier shakeVeryWeak = new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 1f, 5f, 20, 15f, FullName);
+					//Main.instance.CameraModifiers.Add(shakeModerate);
+					Main.instance.CameraModifiers.Add(shakeVeryWeak);
+					Main.NewText("Shake Very Weak.");
 				}
 			}
 		}
@@ -375,8 +380,7 @@ namespace ImprovedFeedback
 					SoundEngine.PlaySound(Sounds.Player.HitWeak, Player.position);
 					if (ImprovedFeedbackConfigClientBasic.Instance.enableDamageEffect && ImprovedFeedbackConfigClientBasic.Instance.enableScreenshake)
 					{
-						PunchCameraModifier modifier = new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 5f, 5f, 30, 1000f, FullName);
-						Main.instance.CameraModifiers.Add(modifier);
+						Main.instance.CameraModifiers.Add(shakeWeak);
 					}
 				}
 				//if (Damage == (int)(Player.statLifeMax * 0.50))
@@ -385,8 +389,7 @@ namespace ImprovedFeedback
 					SoundEngine.PlaySound(Sounds.Player.HitModerate, Player.position);
 					if (ImprovedFeedbackConfigClientBasic.Instance.enableDamageEffect && ImprovedFeedbackConfigClientBasic.Instance.enableScreenshake)
 					{
-						PunchCameraModifier modifier = new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 10f, 5f, 60, 1000f, FullName);
-						Main.instance.CameraModifiers.Add(modifier);
+						Main.instance.CameraModifiers.Add(shakeModerate);
 					}
 				}
 				//if (Damage == (int)(Player.statLifeMax * 0.75))
@@ -395,8 +398,7 @@ namespace ImprovedFeedback
 					SoundEngine.PlaySound(Sounds.Player.HitHard, Player.position);
 					if (ImprovedFeedbackConfigClientBasic.Instance.enableDamageEffect && ImprovedFeedbackConfigClientBasic.Instance.enableScreenshake)
 					{
-						PunchCameraModifier modifier = new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 15f, 5f, 120, 1000f, FullName);
-						Main.instance.CameraModifiers.Add(modifier);
+						Main.instance.CameraModifiers.Add(shakeStrong);
 					}
 				}
 			}
