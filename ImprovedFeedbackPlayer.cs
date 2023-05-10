@@ -362,6 +362,7 @@ namespace ImprovedFeedback
 		
 		public override void OnHurt(Player.HurtInfo info)
 		{
+			var damage = info.Damage;
 			if (ImprovedFeedbackConfigClientBasic.Instance.enableDynamicDamageEffects)
 			{
 				info.SoundDisabled = true;
@@ -369,7 +370,7 @@ namespace ImprovedFeedback
 			if (ImprovedFeedbackConfigClientBasic.Instance.enableDynamicDamageEffects)
 			{
 				//if (Damage == (int)(Player.statLifeMax * 0.25))
-				if (info.Damage > 0 && info.Damage < 5)
+				if (damage > 0 && damage < 5)
 				{
 					SoundEngine.PlaySound(Sounds.Player.HitWeak, Player.position);
 					if (ImprovedFeedbackConfigClientBasic.Instance.enableDamageEffect && ImprovedFeedbackConfigClientBasic.Instance.enableScreenshake)
@@ -379,7 +380,7 @@ namespace ImprovedFeedback
 					}
 				}
 				//if (Damage == (int)(Player.statLifeMax * 0.50))
-				if (info.Damage >= 5 && info.Damage < 15)
+				if (damage >= 5 && damage < 15)
 				{
 					SoundEngine.PlaySound(Sounds.Player.HitModerate, Player.position);
 					if (ImprovedFeedbackConfigClientBasic.Instance.enableDamageEffect && ImprovedFeedbackConfigClientBasic.Instance.enableScreenshake)
@@ -389,7 +390,7 @@ namespace ImprovedFeedback
 					}
 				}
 				//if (Damage == (int)(Player.statLifeMax * 0.75))
-				if (info.Damage >= 15)
+				if (damage >= 15)
 				{
 					SoundEngine.PlaySound(Sounds.Player.HitHard, Player.position);
 					if (ImprovedFeedbackConfigClientBasic.Instance.enableDamageEffect && ImprovedFeedbackConfigClientBasic.Instance.enableScreenshake)
