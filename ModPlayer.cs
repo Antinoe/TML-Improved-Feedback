@@ -27,9 +27,10 @@ namespace ImprovedFeedback
 		public bool itemStepMjolnirArmorHalo5;
 		public bool hasFootwear;
 		
-		PunchCameraModifier shakeWeak = new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 1f, 5f, 20, 15f, "FullName");
-		PunchCameraModifier shakeModerate = new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 1f, 10f, 60, 15f, "FullName");
-		PunchCameraModifier shakeStrong = new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 1f, 20f, 120, 15f, "FullName");
+		PunchCameraModifier shakeBrittle => new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 1f, 6f, 10, 15f, "shakeBrittle");
+		PunchCameraModifier shakeWeak => new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 1f, 6f, 10, 15f, "shakeWeak");
+		PunchCameraModifier shakeModerate => new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 1f, 6f, 10, 15f, "shakeModerate");
+		PunchCameraModifier shakeStrong => new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 1f, 6f, 10, 15f, "shakeStrong");
 		
         public override void ResetEffects()
         {
@@ -277,7 +278,8 @@ namespace ImprovedFeedback
 			{
 				if (ImprovedFeedbackConfigClientBasic.Instance.enableScreenshake)
 				{
-					Main.instance.CameraModifiers.Add(shakeWeak);
+					Main.instance.CameraModifiers.Add(shakeBrittle);
+					//Main.NewText("Very Weak Screenshake");
 				}
 			}
 		}
@@ -357,10 +359,8 @@ namespace ImprovedFeedback
 			{
 				if (ImprovedFeedbackConfigClientBasic.Instance.enableScreenshake)
 				{
-					PunchCameraModifier shakeVeryWeak = new PunchCameraModifier(Main.LocalPlayer.Center, (Main.rand.NextFloat() * (MathHelper.TwoPi)).ToRotationVector2(), 1f, 5f, 20, 15f, FullName);
-					//Main.instance.CameraModifiers.Add(shakeModerate);
-					Main.instance.CameraModifiers.Add(shakeVeryWeak);
-					Main.NewText("Shake Very Weak.");
+					Main.instance.CameraModifiers.Add(shakeWeak);
+					//Main.NewText("Weak Screenshake");
 				}
 			}
 		}
@@ -371,9 +371,6 @@ namespace ImprovedFeedback
 			if (ImprovedFeedbackConfigClientBasic.Instance.enableDynamicDamageEffects)
 			{
 				info.SoundDisabled = true;
-			}
-			if (ImprovedFeedbackConfigClientBasic.Instance.enableDynamicDamageEffects)
-			{
 				//if (Damage == (int)(Player.statLifeMax * 0.25))
 				if (damage > 0 && damage < 5)
 				{
@@ -381,6 +378,7 @@ namespace ImprovedFeedback
 					if (ImprovedFeedbackConfigClientBasic.Instance.enableDamageEffect && ImprovedFeedbackConfigClientBasic.Instance.enableScreenshake)
 					{
 						Main.instance.CameraModifiers.Add(shakeWeak);
+						//Main.NewText("Weak Screenshake");
 					}
 				}
 				//if (Damage == (int)(Player.statLifeMax * 0.50))
@@ -390,6 +388,7 @@ namespace ImprovedFeedback
 					if (ImprovedFeedbackConfigClientBasic.Instance.enableDamageEffect && ImprovedFeedbackConfigClientBasic.Instance.enableScreenshake)
 					{
 						Main.instance.CameraModifiers.Add(shakeModerate);
+						//Main.NewText("Moderate Screenshake");
 					}
 				}
 				//if (Damage == (int)(Player.statLifeMax * 0.75))
@@ -399,6 +398,7 @@ namespace ImprovedFeedback
 					if (ImprovedFeedbackConfigClientBasic.Instance.enableDamageEffect && ImprovedFeedbackConfigClientBasic.Instance.enableScreenshake)
 					{
 						Main.instance.CameraModifiers.Add(shakeStrong);
+						//Main.NewText("Strong Screenshake");
 					}
 				}
 			}
