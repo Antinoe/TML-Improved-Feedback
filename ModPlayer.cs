@@ -403,5 +403,12 @@ namespace ImprovedFeedback
 				}
 			}
 		}
+        public override void ModifyHurt(ref Player.HurtModifiers modifiers)
+        {
+			if (ImprovedFeedbackConfigClientBasic.Instance.enableDynamicDamageEffects)
+			{
+				modifiers.DisableSound();
+			}
+        }
     }
 }
