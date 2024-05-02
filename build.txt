@@ -1,0 +1,6 @@
+displayName = Improved Feedback
+author = Antinous
+version = 0.2
+homepage = https://github.com/Antinoe/TML-Improved-Feedback
+includeSource = true
+hideResources = false

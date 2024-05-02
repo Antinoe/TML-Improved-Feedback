@@ -1,0 +1,76 @@
+Configs: {
+	FootstepConfig: {
+		DisplayName: Footstep Config
+
+		Headers: {
+			Footsteps: Footsteps Header
+			Footstep.Definitions: Footstep. Definitions Header
+			FootstepDefinitions: Footstep Definitions Header
+		}
+
+		FootstepsToggle: {
+			Label: "[i:Megaphone] Footsteps Toggle"
+			Tooltip: Determines whether or not Footstep sounds play.
+		}
+
+		itemPresenceFootsteps: {
+			Label: Presence Footsteps
+			Tooltip: ""
+		}
+
+		itemHalfLife2: {
+			Label: Half-Life 2
+			Tooltip: ""
+		}
+
+		itemHalo5: {
+			Label: Halo 5
+			Tooltip: ""
+		}
+
+		itemCloth: {
+			Label: Cloth
+			Tooltip: ""
+		}
+
+		itemSlime: {
+			Label: Slime
+			Tooltip: ""
+		}
+
+		itemChainmail: {
+			Label: Chainmail
+			Tooltip: ""
+		}
+
+		itemPlate: {
+			Label: Plate
+			Tooltip: ""
+		}
+
+		itemPlateFoot: {
+			Label: Plate Foot
+			Tooltip: ""
+		}
+
+		itemCrystal: {
+			Label: Crystal
+			Tooltip: ""
+		}
+
+		itemCrystalFoot: {
+			Label: Crystal Foot
+			Tooltip: ""
+		}
+
+		LegFrame1: {
+			Label: "[i:Hay] Leg Frame 1"
+			Tooltip: ""
+		}
+
+		LegFrame2: {
+			Label: "[i:Hay] Leg Frame 2"
+			Tooltip: ""
+		}
+	}
+}
